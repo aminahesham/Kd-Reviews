@@ -33,14 +33,13 @@ body {
 </head>
 <body>
 
-<div class="hero-image">
+<div class="hero-image" style="border-style: hidden;">
   <div class="hero-text">
-    <h1 style="font-size:50px">Welcome !</h1>
-    <h3>Here you will find reviews about all the Kdramas and Kmovies that you want enjoy your time . </h3>
+    <h1 style="font-size:50px">Welcome To Kd-Reviews!</h1>
   </div>
 </div>
 <br>
-<div class="container" style="margin:20px; ">
+<div class="container" style="margin:20px;border-style: dotted; border-color:#e6e600">
 <h2 style="color:#e6e600;">Stars News :</h2>
 <br><br>
 <img src="https://www.somagnews.com/wp-content/uploads/2021/07/EXOs-DO.jpg" alt="D.O" style="size:150px;height:150px">

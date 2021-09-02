@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home' , [HomeController::class,'Home']);
+Route::get('/home'    , [HomeController::class,'Home']);
+Route::get('/addpost' , [HomeController::class,'AddPost']);
