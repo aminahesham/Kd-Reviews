@@ -10,10 +10,9 @@ body {
 }
 form{
     background-color:#003366;    
-    border: 3px solid ;
     border-color: #e6e600;
-    border-style:dotted;
-    border-radius: 10px;
+    border-style: dotted;
+    border-radius: 15px 50px ;
     padding: 10px;
     margin: 10px;
     width: 500px;
@@ -73,9 +72,11 @@ li a:hover:not(.active) {
     border-radius: 15px;
     cursor: pointer;  
 }
-input[type="text"]{
+#input{
     margin: 5px;
     padding: 5px;
+    background-color:#00264d;
+    border-radius: 25px;
 }
 
 </style> 
@@ -93,13 +94,13 @@ input[type="text"]{
 
 
 <div class="form-group">
-  <label for="name_ar" style="color:#ffffcc" ><b>Report Details</b></label><br><br>
-  <textarea class="col-sm-2 col-form-label text-danger" id="photo" name="photo"  cols="50" rows="10" size="50" multiple></textarea><br>
+  <label for="name_ar" style="color:#ffffcc;" ><b>Report Details :</b></label><br><br>
+  <textarea class="col-sm-2 col-form-label text-danger"  id="input" name="photo"  cols="50" rows="10" size="50" multiple></textarea><br>
 </div>      
 <br><br>
 <div class="form-group">
-  <label for="photo" style="color:#ffffcc" ><b>Photo</b></label><br>
-  <input type="text" class="col-sm-2 col-form-label text-danger" id="photo" name="photo"  size="50" multiple><br>
+  <label for="photo" style="color:#ffffcc" ><b>Photo :</b></label><br>
+  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="photo"  size="50" multiple><br>
 </div>
 <br><br>
   <input type="submit" id="submit" value="save" formmethod="POST" formaction=""><br>

@@ -39,7 +39,7 @@ body {
   </div>
 </div>
 <br>
-<div class="container" style="margin:20px;border-style: dotted; border-color:#e6e600">
+<div class="container" style="margin:20px;border-style: dotted; border-color:#e6e600; border-radius: 15px 50px;">
 <h2 style="color:#e6e600;">Stars News :</h2>
 <br><br>
 <img src="https://www.somagnews.com/wp-content/uploads/2021/07/EXOs-DO.jpg" alt="D.O" style="size:150px;height:150px">
