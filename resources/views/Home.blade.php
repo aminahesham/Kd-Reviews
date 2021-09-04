@@ -19,15 +19,23 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  
 }
 
 .hero-text {
   text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+#img{
+  size:150px;
+  height:150px;
+  border-radius:20px 15px;
 }
 </style>
 </head>
@@ -40,11 +48,12 @@ body {
 </div>
 <br>
 <div class="container" style="margin:20px;border-style: dotted; border-color:#e6e600; border-radius: 15px 50px;">
-<h2 style="color:#e6e600;">Stars News :</h2>
+<h2 style="color:#e6e600;  text-shadow: 2px 2px 4px #000000;
+">Stars News :</h2>
 <br><br>
-<img src="https://www.somagnews.com/wp-content/uploads/2021/07/EXOs-DO.jpg" alt="D.O" style="size:150px;height:150px">
+<img src="https://www.somagnews.com/wp-content/uploads/2021/07/EXOs-DO.jpg" alt="D.O" id="img">
 <br><br>
-<p dir="rtl" style="color:white;">ذكرت العديد من وسائل الإعلام في 13 أغسطس أن الممثل الأيدول دو كيونغ سو يعود إلى الشاشة الصغيرة مع الدراما "Real Sword Battle".
+<p dir="rtl" style="color:white;font-size:18px;">ذكرت العديد من وسائل الإعلام في 13 أغسطس أن الممثل الأيدول دو كيونغ سو يعود إلى الشاشة الصغيرة مع الدراما "Real Sword Battle".
 
 وكالة SM Entertainment التابع لـها دو كيونج سو شاركت وجهة نظرها حول التقارير وكشفت أن الممثل الآيدول يفكر بإيجابية في الظهور في الدراما القادمة.
 
@@ -74,9 +83,9 @@ body {
 <br><br>
 
 
-<img src="https://www.asiaholic.net/wp-content/uploads/2021/07/Song-Hye-Kyo-390x220.jpg" alt="song hey kyo" style="size:150px;height:150px">
+<img src="https://www.asiaholic.net/wp-content/uploads/2021/07/Song-Hye-Kyo-390x220.jpg" alt="song hey kyo" id="img">
 <br><br>
-<p dir="rtl" style="color:white;"> 
+<p dir="rtl" style="color:white;font-size:18px;"> 
 أظهرت سونج هاي كيو صداقتها الوثيقة مع زميلها الممثل يو أه إن في 11 يوليو حيث نشرت الممثلة
 
 علي Instagram صورة رائعة للغاية لـها مع يو إن أه وهو يلعب مع كلبها. وأضافت في التسمية التوضيحية ، "الرائع يو إن اه."
@@ -89,9 +98,9 @@ body {
 </p>
 <br><br>
 
-<img src="https://pbs.twimg.com/media/Ez8dXUPVUAIz3Gh.jpg" alt="Lee Kwang Soo" style="size:150px;height:150px">
+<img src="https://pbs.twimg.com/media/Ez8dXUPVUAIz3Gh.jpg" alt="Lee Kwang Soo" id="img">
 <br><br>
-<p dir="rtl" style="color:white;">
+<p dir="rtl" style="color:white;font-size:18px;">
  في 27 أبريل، أكدت وكالة الممثل لي كوانج سو من King Kong التابعة لـ Starship في بيان صحفي رسمي أن النجم سيترك برنامج الرجل الجاري Running Man التابع لقناة SBS.
 
 نقلاً عن الوكالة التابع لها:
@@ -105,7 +114,7 @@ body {
 </p>
 <br><br>
 
-<img src="https://6.viki.io/image/008dd00ec1bc4c829370c2deb794cdba.jpeg?s=900x600&e=t" alt="jee chang wook" style="size:150px;height:150px">
+<img src="https://6.viki.io/image/008dd00ec1bc4c829370c2deb794cdba.jpeg?s=900x600&e=t" alt="jee chang wook" id="img" >
 <br><br>
 <p dir="rtl" style="color:white;">
 أكد فريق الإنتاج لمسلسل نتفلكس الأصلي القادم "Annarasumanara" فريق التمثيل في 15 أبريل. حيث سيعمل كل من جي تشانج ووك و هوانج إن يوب والممثلة الصاعدة تشوي سونج أون معًا من أجل الدراما الموسيقية.  والتي من إخراج كيم سيونغ يون وكتابة كيم مين جونغ. ستكون هذه الدراما ثالث عمل تعاوني بين المخرج والكاتب. لقد عملوا معًا سابقًا في الدراما "Love In The Moonlight" و "Who Are You: School 2015". 
