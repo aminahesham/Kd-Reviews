@@ -92,10 +92,15 @@ li a:hover:not(.active) {
 
 <h1 style="color:white; text-align: center;">Add Post</h1>
 
+<div class="form-group">
+  <label for="title" style="color:#ffffcc;" ><b> Report Title :</b></label><br><br>
+  <textarea class="col-sm-2 col-form-label text-danger"  id="input" name="title"  cols="50" rows="10" size="50" multiple></textarea><br>
+</div>      
+<br><br>
 
 <div class="form-group">
-  <label for="name_ar" style="color:#ffffcc;" ><b>Report Details :</b></label><br><br>
-  <textarea class="col-sm-2 col-form-label text-danger"  id="input" name="photo"  cols="50" rows="10" size="50" multiple></textarea><br>
+  <label for="details" style="color:#ffffcc;" ><b> Report Details :</b></label><br><br>
+  <textarea class="col-sm-2 col-form-label text-danger"  id="input" name="details"  cols="50" rows="10" size="50" multiple></textarea><br>
 </div>      
 <br><br>
 <div class="form-group">

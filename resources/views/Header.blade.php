@@ -42,8 +42,7 @@
       <button type="submit" class="btn btn-default">بحث</button>
     </form>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#" style="color:white;"><span class="glyphicon glyphicon-user" style="color:white;"></span> انشاء حساب</a></li>
-      <li><a href="#" style="color:white;"><span class="glyphicon glyphicon-log-in" style="color:white;"></span> تسجيل دخول</a></li>
+      <li><a href="{{url('login')}}" style="color:white;"><span class="glyphicon glyphicon-log-in" style="color:white;"></span> تسجيل دخول</a></li>
     </ul>
   </div>
 </nav>
