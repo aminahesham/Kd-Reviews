@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
         RoleUser::create([
             'role_id'  => 1,
             'user_id'  => $user -> id,
-            'user_type'=> 'normal',
+            'user_type'=> 'user',
               
           ]);
 

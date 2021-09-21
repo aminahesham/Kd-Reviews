@@ -12,10 +12,10 @@
 
 <body>
 
-<nav class="navbar navbar-inverse" style="background-color: #003366;">
+<nav class="navbar navbar-inverse" style="background-color:#736699;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" style="color:#e6e600;  text-shadow: 2px 2px 4px #000000;">Kd-Reviews</a>
+      <a class="navbar-brand" style="color:#c2c2a3;  text-shadow: 2px 2px 4px #000000;">Kd-Reviews</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">دراما <span class="caret"></span></a>

@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Drama;
+use App\Models\User;
+use App\Models\RoleUser; 
+use App\Models\Role;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -19,6 +24,22 @@ class HomeController extends Controller
     public function showDramas(){
         $dramas = Drama :: all();
         return view('Home' ,['dramas' => $dramas]);
+    }
+
+    
+////******************************************** REDIRECT USER AND ADMIN *************************************************************************////
+   
+    public function redirect(){
+
+        $role = Auth :: user();
+
+        if($role->hasRole('normal_user')){
+
+            return view('userhome');
+        }
+        else{
+            return view('dashboard');
+        }
     }
     
 }
