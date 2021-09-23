@@ -15,6 +15,25 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('addpost')" :active="request()->routeIs('addpost')">
+                        {{ __('Add Post') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('dramaview')" :active="request()->routeIs('dramaview')">
+                        {{ __('Dramas') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('moviesview')" :active="request()->routeIs('moviesview')">
+                        {{ __('Movies') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('userslist')" :active="request()->routeIs('userlist')">
+                        {{ __('Users List') }}
+                    </x-nav-link>
+
+
+
                 </div>
             </div>
 

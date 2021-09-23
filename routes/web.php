@@ -29,4 +29,26 @@ Route::get('/dashboard',function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+
+Route::get('/addpost',function () {
+    return view('addpost');
+})->middleware(['auth'])->name('addpost');
+
+Route::get('/dramaview',function () {
+    return view('addpost');
+})->middleware(['auth'])->name('dramaview');
+
+Route::get('/moviesview',function () {
+    return view('addpost');
+})->middleware(['auth'])->name('moviesview');
+
+Route::get('/adminslist',function () {
+    return view('addpost');
+})->middleware(['auth'])->name('adminslist');
+
+Route::get('/userslist',function () {
+    return view('addpost');
+})->middleware(['auth'])->name('userslist');
+
+
 require __DIR__.'/auth.php';

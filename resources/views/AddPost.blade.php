@@ -1,7 +1,6 @@
 
 
 
-
 <style>
 
 body {
@@ -16,7 +15,6 @@ form{
     padding: 10px;
     margin: 10px;
     width: 500px;
-    height:500px;
 }
 
  
@@ -90,11 +88,11 @@ li a:hover:not(.active) {
 <form id="form" method="POST" action="" enctype="multipart/form-data">
 @csrf
 
-<h1 style="color:white; text-align: center;">Add Post</h1>
+<h1 style="color:#bfbf40; text-align: center;">Add Post</h1>
 
 <div class="form-group">
   <label for="title" style="color:#ffffcc;" ><b> Report Title :</b></label><br><br>
-  <textarea class="col-sm-2 col-form-label text-danger"  id="input" name="title"  cols="50" rows="10" size="50" multiple></textarea><br>
+  <textarea class="col-sm-2 col-form-label text-danger"  id="input" name="title"  cols="50" rows="5" size="50" multiple></textarea><br>
 </div>      
 <br><br>
 
