@@ -42,7 +42,11 @@
       <button type="submit" class="btn btn-default">بحث</button>
     </form>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="{{url('login')}}" style="color:white;"><span class="glyphicon glyphicon-log-in" style="color:white;"></span> تسجيل دخول</a></li>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">{{Auth :: user()->name}} <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+        <li><a href="{{route ('logout')}}" style="color:#003366;">Logout</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,34 +23,41 @@ Route::get('/', function () {
 
 Route::get('/redirect', [HomeController::class , 'redirect']);
 
+Route::group(['middleware' => 'auth'], function () {
+
 Route::get('/userhome', function () {
     return view('UserHome');
-})->middleware(['auth']);
+});
 
 Route::get('/dashboard',function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->name('dashboard');
 
 
 Route::get('/addpost',function () {
     return view('addpost');
-})->middleware(['auth'])->name('addpost');
+})->name('addpost');
 
 Route::get('/dramaview',function () {
     return view('addpost');
-})->middleware(['auth'])->name('dramaview');
+})->name('dramaview');
 
 Route::get('/moviesview',function () {
     return view('addpost');
-})->middleware(['auth'])->name('moviesview');
+})->name('moviesview');
 
 Route::get('/adminslist',function () {
     return view('addpost');
-})->middleware(['auth'])->name('adminslist');
+})->name('adminslist');
 
 Route::get('/userslist',function () {
     return view('addpost');
-})->middleware(['auth'])->name('userslist');
+})->name('userslist');
 
+Route::post('/savepost' , [AdminController::class , 'savePost'])->name('savepost');
 
+Route::get('showdramas' , [AdminController::class,'showDramas'])->name('showdramas');
+
+Route::get('showusers'  , [AdminController::class,'showUsers'])->name('showusers');
+});
 require __DIR__.'/auth.php';

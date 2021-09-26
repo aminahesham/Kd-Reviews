@@ -80,8 +80,7 @@ li a:hover:not(.active) {
 </style> 
 
 <body>
-    
-
+  
 
 <div align="center" class="container">
 
@@ -106,7 +105,12 @@ li a:hover:not(.active) {
   <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="photo"  size="50" multiple><br>
 </div>
 <br><br>
-  <input type="submit" id="submit" value="save" formmethod="POST" formaction=""><br>
+<div class="form-group">
+  <label for="source" style="color:#ffffcc" ><b>Source :</b></label><br>
+  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="source"  size="50" multiple><br>
+</div>
+<br><br>
+  <input type="submit" id="submit" value="save" formmethod="POST" formaction="{{url('savepost')}}"><br>
 
 
 
