@@ -19,7 +19,7 @@
                         {{ __('Dramas') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('moviesview')" :active="request()->routeIs('moviesview')">
+                    <x-nav-link :href="route('showmovies')" :active="request()->routeIs('showmovies')">
                         {{ __('Movies') }}
                     </x-nav-link>
 

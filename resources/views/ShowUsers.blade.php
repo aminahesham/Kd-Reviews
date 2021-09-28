@@ -1,4 +1,3 @@
-
 <?php
 use App\Http\Controllers\UserController;
 use App\Models\Role; 
@@ -7,33 +6,7 @@ $roles=Role::all();
 
 ?>
 
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Kd-Reviews</title>
-        <link rel="shortcut icon" type="image/x-icon" href="https://pngimage.net/wp-content/uploads/2018/06/logo-panier-png-5.png" />
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-    </head>
-
-    <body>
-
-    <style>
-     #fr {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 99%;
-  margin:4px;
-  padding:8px;
-}
-
+<style>
 
 body {
 background-color:white;
@@ -78,21 +51,32 @@ a:hover {
 }
 a.button{
    cursor:pointer; 
-   background-color:green;
    margin:10px;
    padding:10px;
 }
+#fr {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 99%;
+  margin:4px;
+  padding:8px;
+}
 
 </style> 
-<br><br>
-<h3 style="color:#669980; font-family: Arial; margin:2px; padding:4px;text-align: center;"> Users Table :</h3> 
+<x-app-layout>
 
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Users List :') }}
+        </h2>
+    </x-slot>
 
-<br>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-@if(Session::has('productdeleted'))
+@if(Session::has('userdeleted'))
             <div align="center" class="alert alert-success" role="alert" style="color:white; font-size:30px">
-                {{ Session::get('productdeleted') }}
+                {{ Session::get('userdeleted') }}
             </div>
 @endif
 
@@ -128,10 +112,10 @@ a.button{
 
     <td>
 
-    <a href="{{url('admin/getuser/'.$user->id)}}" class="btn btn-warning" style="background-color: #00e64d">Update</a>
+    <a href="{{url('admin/getuser/'.$user->id)}}" class="btn btn-warning" style="background-color: #3399ff">Update</a>
 
 
-    <a href="{{url('admin/deleteuser/'.$user->id)}}" class="btn btn-warning" style="background-color:orange">Delete</a>
+    <a href="{{url('admin/deleteuser/'.$user->id)}}" class="btn btn-warning" style="background-color:#ff4000">Delete</a>
 
 
     </td>
@@ -140,5 +124,8 @@ a.button{
  
 </table>
 
-    </body>
-</html>
+
+
+        </div>
+    </div>
+</x-app-layout>

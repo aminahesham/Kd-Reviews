@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Drama;
+use App\Models\Movies;
+
 
 
 class AdminController extends Controller
@@ -33,6 +35,11 @@ class AdminController extends Controller
         $dramas=Drama::all();
         return view('ShowDramas',compact('dramas'));
 
+    }
+
+    public function showMovies (){
+        $movies = Movies::all();
+        return view ('showmovies' , compact('movies'));
     }
     
 }

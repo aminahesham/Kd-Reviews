@@ -11,7 +11,6 @@ form{
     border-radius: 10px;
     padding: 8px;
     margin: 8px;
-    width: 300px;
 }
 table, td, th {  
   border: 1px solid #ddd;
@@ -61,7 +60,7 @@ a.button{
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dramas List :') }}
+            {{ __('Movies List :') }}
         </h2>
     </x-slot>
 
@@ -82,7 +81,7 @@ a.button{
 @endif
 
 
-<table style="margin:5px;">
+<table style="width:100%;margin:5px;">
 
 
 <tr id="fr">
@@ -92,23 +91,34 @@ a.button{
   <th scope="col">Rate</th>
   <th scope="col">Story</th>
   <th scope="col">Cast</th>
+  <th scope="col">Country</th>
+  <th scope="col">Year</th>
+  <th scope="col">Type</th>
+  <th scope="col">Classfication</th>
+
   <th scope="col">Edit</th>
 </tr>
 
-  @foreach($dramas as $drama)
+  @foreach($movies as $movie)
   <tr>
-  <th scope="row">{{$drama->id}}</th>
-    <td>{{$drama -> name}}</td>
-    <td>{{$drama -> photo}}</td>
-    <td>{{$drama -> rate}}</td>
-    <td>{{$drama -> story}}</td>
-    <td>{{$drama -> cast}}</td>
+  <th scope="row">{{$movie->id}}</th>
+    <td>{{$movie -> name}}</td>
+    <td>{{$movie -> photo}}</td>
+    <td>{{$movie -> rate}}</td>
+    <td>{{$movie -> story}}</td>
+    <td>{{$movie -> cast}}</td>
+    <td>{{$movie -> country}}</td>
+    <td>{{$movie -> year}}</td>
+    <td>{{$movie -> type}}</td>
+    <td>{{$movie -> classification}}</td>
+
 
     <td>
 
-    <a href="{{url('admin/getuser/'.$drama->id)}}"  style="background-color:#3399ff">Update</a>
+    <a href="{{url('admin/getuser/'.$movie->id)}}" class="btn btn-warning" style="background-color: #3399ff">Update</a>
 <br><br><br>
-    <a href="{{url('admin/deleteuser/'.$drama->id)}}"  style="background-color:#ff4000">Delete</a>
+
+<a href="{{url('admin/deleteuser/'.$movie->id)}}" class="btn btn-warning" style="background-color:#ff4000">Delete</a>
 
 
     </td>

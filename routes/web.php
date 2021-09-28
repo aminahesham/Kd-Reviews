@@ -5,23 +5,18 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/new', function () {
+    return view('newview');
+});
+
+//*redirect user and admins by roles*
+
 Route::get('/redirect', [HomeController::class , 'redirect']);
+
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -29,35 +24,43 @@ Route::get('/userhome', function () {
     return view('UserHome');
 });
 
+/********************************************dashboard operations*******************************************************/
+
 Route::get('/dashboard',function () {
     return view('dashboard');
 })->name('dashboard');
 
 
+//*add new posts and save them in database *
+
 Route::get('/addpost',function () {
     return view('addpost');
 })->name('addpost');
 
-Route::get('/dramaview',function () {
-    return view('addpost');
-})->name('dramaview');
-
-Route::get('/moviesview',function () {
-    return view('addpost');
-})->name('moviesview');
-
-Route::get('/adminslist',function () {
-    return view('addpost');
-})->name('adminslist');
-
-Route::get('/userslist',function () {
-    return view('addpost');
-})->name('userslist');
-
 Route::post('/savepost' , [AdminController::class , 'savePost'])->name('savepost');
+
+
+//*dramas operations*
 
 Route::get('showdramas' , [AdminController::class,'showDramas'])->name('showdramas');
 
+
+
+
+//*movies operations*
+Route::get('showmovies'  , [AdminController::class,'showMovies'])->name('showmovies');
+
+
+
+
+
+//*users operations*
+
 Route::get('showusers'  , [AdminController::class,'showUsers'])->name('showusers');
+
+
+
+
+
 });
 require __DIR__.'/auth.php';
