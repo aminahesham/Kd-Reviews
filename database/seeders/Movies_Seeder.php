@@ -19,15 +19,15 @@ class Movies_Seeder extends Seeder
 
         DB::table('movies')->insert([
 
-            'name'     => 'The call ',
-            'rate'     => '9',
-            'photo'    => 'https://aradramtv.com/wp-content/uploads/photo1264753.jpg',
-            'story'    => 'The Call ; It is a 2020 South Korean movie, adapted from the 2011 British movie The Call, written by Sergio Cassie, and shown on Netflix on',
-            'cast'     => 'park shin hye , jeon jeong seo',
+            'name'     => 'Midnight ',
+            'rate'     => '9.5',
+            'photo'    => 'https://awsimages.detik.net.id/community/media/visual/2021/06/30/7-fakta-film-korea-midnight-kisah-tunarungu-dikejar-pembunuh-berantai.jpeg?w=900',
+            'story'    => 'A game of hide and seek in which Kyung Mi and her mother, who suffer from a deaf and dumb disability, struggle to escape from a deranged killer who aims to kill them after their intervention to save a girl from murder.',
+            'cast'     => 'jin ko joo , wi ha joon',
             'country'  => 'south korea',
-            'year'     => '2020',
-            'type'     => 'action/fantasy',
-            'classification' => '18',
+            'year'     => '2021',
+            'type'     => 'action/suspense',
+            'classification' => '15',
         ]);
     }
 }

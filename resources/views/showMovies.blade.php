@@ -65,7 +65,6 @@ a.button{
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
 @if(Session::has('productdeleted'))
             <div align="center" class="alert alert-success" role="alert" style="color:white; font-size:30px">
@@ -103,7 +102,7 @@ a.button{
   <tr>
   <th scope="row">{{$movie->id}}</th>
     <td>{{$movie -> name}}</td>
-    <td>{{$movie -> photo}}</td>
+    <td><img class="slider-img" src="{{$movie['photo']}}"style="width:300px;height:150px;" ></td>
     <td>{{$movie -> rate}}</td>
     <td>{{$movie -> story}}</td>
     <td>{{$movie -> cast}}</td>
@@ -129,6 +128,5 @@ a.button{
 
 
 
-        </div>
     </div>
 </x-app-layout>

@@ -4,25 +4,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 
-
+/*
 Route::get('/', function () {
     return view('home');
 });
+*/
 
-Route::get('/new', function () {
-    return view('newview');
-});
+
+Route::get('/',[HomeController::class , 'showDramas']);
+
 
 //*redirect user and admins by roles*
 
-Route::get('/redirect', [HomeController::class , 'redirect']);
-
+Route::get('/redirect',[HomeController::class , 'redirect']);
 
 Route::group(['middleware' => 'auth'], function () {
 
-Route::get('/userhome', function () {
-    return view('UserHome');
-});
 
 /********************************************dashboard operations*******************************************************/
 
@@ -37,7 +34,12 @@ Route::get('/addpost',function () {
     return view('addpost');
 })->name('addpost');
 
+
 Route::post('/savepost' , [AdminController::class , 'savePost'])->name('savepost');
+
+//*display home page and show posts
+
+Route::get('/userhome'  ,[HomeController::class , 'showPosts']);
 
 
 //*dramas operations*
@@ -57,7 +59,6 @@ Route::get('showmovies'  , [AdminController::class,'showMovies'])->name('showmov
 //*users operations*
 
 Route::get('showusers'  , [AdminController::class,'showUsers'])->name('showusers');
-
 
 
 

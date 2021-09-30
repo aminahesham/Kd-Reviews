@@ -7,53 +7,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color:	  #00264d;
 }
-form{
-    background-color:#003366;    
-    border-color: #e6e600;
-    border-style: dotted;
-    border-radius: 15px 50px ;
-    padding: 10px;
-    margin: 10px;
-    width: 500px;
-}
+
 
  
-a{
-    color: black;
-    text-decoration:none;
-    font-size:20px;
-    padding: 15px 25px;
-    display:inline;
-    font-weight:bold;
-}
-a:hover {
-  color: #ffffcc;
-  background-color: transparent;
-  text-decoration: none;
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color:  grey;
-}
-li {
-  float: left;
-}
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-li a:hover:not(.active) {
-  background-color:#999966;
-}
-.active {
-  background-color: #4CAF50;
-}
+
 #submit{
     width: 65px;
     height: 40px;

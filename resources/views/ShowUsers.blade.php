@@ -11,14 +11,7 @@ $roles=Role::all();
 body {
 background-color:white;
 }
-form{
-    background-color:white;
-    border: 3px solid white;
-    border-radius: 10px;
-    padding: 8px;
-    margin: 8px;
-    width: 300px;
-}
+
 table, td, th {  
   border: 1px solid #ddd;
   text-align: left;

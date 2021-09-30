@@ -7,6 +7,8 @@ use App\Models\Drama;
 use App\Models\User;
 use App\Models\RoleUser; 
 use App\Models\Role;
+use App\Models\Post;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -21,10 +23,17 @@ class HomeController extends Controller
         return view('AddPost');
     }
 
+    public function showPosts(){
+        $posts = Post :: all();
+        return view('UserHome' , ['posts' => $posts]);
+    }
+
     public function showDramas(){
         $dramas = Drama :: all();
         return view('Home' ,['dramas' => $dramas]);
     }
+
+    
 
     
 ////******************************************** REDIRECT USER AND ADMIN *************************************************************************////

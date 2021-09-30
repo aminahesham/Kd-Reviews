@@ -18,31 +18,39 @@
       <a class="navbar-brand" style="color:#c2c2a3;  text-shadow: 2px 2px 4px #000000;">Kd-Reviews</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">دراما <span class="caret"></span></a>
+
+    <li class=""><a class="" data-toggle="" href="{{url('userhome')}}" style="color:white;">Home <span class=""></span></a>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Drama <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" style="color:#003366;">مكتمله</a></li>
-          <li><a href="#" style="color:#003366;">تبث حاليا</a></li>
+          <li><a href="#" style="color:#003366;">Full</a></li>
+          <li><a href="#" style="color:#003366;">Continous</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">افلام <span class="caret"></span></a>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Movies <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" style="color:#003366;">رعب</a></li>
-          <li><a href="#" style="color:#003366;">غموض</a></li>
-          <li><a href="#" style="color:#003366;">كوميدي / رومانسي</a></li>
-          <li><a href="#" style="color:#003366;">فانتازيا</a></li>
+          <li><a href="#" style="color:#003366;">Horrible</a></li>
+          <li><a href="#" style="color:#003366;">Suspiness</a></li>
+          <li><a href="#" style="color:#003366;">Comedy / Romantic</a></li>
+          <li><a href="#" style="color:#003366;">Fantasy</a></li>
 
         </ul>
       </li>
+
+      
+
     </ul>
     <form class="navbar-form navbar-left" action="search">
     @csrf
       <div class="form-group">
-        <input type="text" name='query' class="form-control" placeholder="بحث" name="search">
+        <input type="text" name='query' class="form-control" placeholder="search" name="search">
       </div>
-      <button type="submit" class="btn btn-default">بحث</button>
+      <button type="submit" class="btn btn-default">Search</button>
     </form>
     <ul class="nav navbar-nav navbar-right">
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">{{Auth :: user()->name}} <span class="caret"></span></a>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">{{Auth :: user()-> name}} <span class="caret"></span></a>
         <ul class="dropdown-menu">
         <li><a href="{{route ('logout')}}" style="color:#003366;">Logout</a></li>
         </ul>

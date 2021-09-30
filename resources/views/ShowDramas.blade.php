@@ -5,14 +5,7 @@
 body {
 background-color:white;
 }
-form{
-    background-color:white;
-    border: 3px solid white;
-    border-radius: 10px;
-    padding: 8px;
-    margin: 8px;
-    width: 300px;
-}
+
 table, td, th {  
   border: 1px solid #ddd;
   text-align: left;
@@ -66,7 +59,6 @@ a.button{
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
 @if(Session::has('productdeleted'))
             <div align="center" class="alert alert-success" role="alert" style="color:white; font-size:30px">
@@ -99,7 +91,7 @@ a.button{
   <tr>
   <th scope="row">{{$drama->id}}</th>
     <td>{{$drama -> name}}</td>
-    <td>{{$drama -> photo}}</td>
+    <td><img class="slider-img" src="{{$drama['photo']}}"style="width:300px;height:150px;" ></td>
     <td>{{$drama -> rate}}</td>
     <td>{{$drama -> story}}</td>
     <td>{{$drama -> cast}}</td>
@@ -107,7 +99,7 @@ a.button{
     <td>
 
     <a href="{{url('admin/getuser/'.$drama->id)}}"  style="background-color:#3399ff">Update</a>
-<br><br><br>
+    <br><br><br>
     <a href="{{url('admin/deleteuser/'.$drama->id)}}"  style="background-color:#ff4000">Delete</a>
 
 
@@ -117,8 +109,5 @@ a.button{
  
 </table>
 
-
-
-        </div>
     </div>
 </x-app-layout>

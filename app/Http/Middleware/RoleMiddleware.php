@@ -19,20 +19,16 @@ class RoleMiddleware
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-
-        if (Auth::user()->role == 'admin') {
-            return redirect()->route('dashboard');
-        }
-
         if (Auth::user()->role == 'user') {
             return redirect()->route('userhome');
-        }
-
-        if (Auth::user()->role == 'super_admin') {
+        }else{
             return redirect()->route('dashboard');
+
         }
 
         
-        //return $next($request);
+
+        
+        return $next($request);
     }
 }
