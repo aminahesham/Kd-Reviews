@@ -11,6 +11,16 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in as admin!
+                    <br>
+                    <button onclick="window.location.href='addpost'" style="color:orange;">Add Post</button>
+                    <br>
+                    <button onclick="window.location.href='addpost'" style="color:blue;">Add Drama</button>
+                    <br>
+                    <button onclick="window.location.href='addpost'" style="color:#33cc33;">Add Movies</button>
+                    <br>
+                    <button onclick="window.location.href='addpost'" style="color:#cc0099;">Add user</button>
+
+
                 </div>
             </div>
         </div>

@@ -1,4 +1,15 @@
+<?php
+use App\Models\Drama;
+use App\Models\Movies;
+use Illuminate\Support\Facades\DB;
+$trendingDramas = Drama:: where ('trending' , 1)
+            ->get();
 
+ $trendingMovies = Movies:: where ('trending' , 1)
+            ->get();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +25,7 @@ body {
   margin: 0;
   padding:0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color:#ccccb3;
+  background-color:#e3e0eb;
 }
 
 .hero-image {
@@ -125,9 +136,7 @@ img.slider-img{
     <a href="">
     <img class="slider-img" src="{{$item['photo']}}" >
       <div class="carousel-caption slider-text">
-      <div class="hero-text">
-    <h1 style="font-size:40px">Welcome To Kd-Reviews!</h1>
-  </div>      
+          
       </div>
     </a>
     </div>
@@ -147,23 +156,41 @@ img.slider-img{
 
 
 
- <!-- Trending Products -->
-<div class="trending-wrapper">
-<h3 style="color:darkblue;text-align:center;">Trending Dramas</h3>
-  @foreach($dramas as $item)
-  <div class="trending-items">
-  <a href="">
-
-      <img class="trending-img" src="{{$item['photo']}}" >
+ <!-- Trending Dramas -->
+<div  style="margin:10px; border-color: #996666; border-radius: 15px 50px;" class="container">
+<h3 style="color:darkblue;text-align:center;text-shadow: 2px 2px 4px #000000;">Trending Dramas</h3>
+<h4 style="text-align:center;">most viewed dramas</h4>
+@foreach($trendingDramas as $item)
+  <div  class="trending-items">
+  <a href="details/{{$item['id']}}">
+        <img style="padding-right:40px;" class="trending-img" src="{{$item['photo']}}" >
       <div class="">
       <h4 style='color:black'>{{$item['name']}}</h4>
-
       </div>
       </a>
     </div>
     @endforeach
-    </div>
 </div>
+
+
+
+ <!-- Trending Movies -->
+
+<div style="margin:10px; border-color: #996666; border-radius: 15px 50px;" class="container">
+<h3 style="color:darkblue;text-align:center;text-shadow: 2px 2px 4px #000000;">Trending Movies</h3>
+<h4 style="text-align:center;">most viewed movies</h4>
+@foreach($trendingMovies as $item)
+  <div class="trending-items">
+  <a href="">
+      <img style="padding-right:40px;" class="trending-img" src="{{$item['photo']}}" >
+      <div style="padding-right:40px;" class="">
+      <h4 style='color:black'>{{$item['name']}}</h4>
+      </div>
+      </a>
+    </div>
+    @endforeach
+</div>
+
 
 
 

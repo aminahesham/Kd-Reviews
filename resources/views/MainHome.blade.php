@@ -3,8 +3,6 @@
 
 <?php
  use App\Models\Post;
-
-
 $posts= Post :: all();
 ?>
 <style>
@@ -12,11 +10,11 @@ body {
   margin: 0;
   padding:0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color:#ccccb3;
+  background-color:#e3e0eb;
 }
 
 .hero-image {
-  background-image: url("https://bluezznation.com/wp-content/uploads/2021/06/IMG_20210611_135336_920-aaa15a2e.jpg");
+  background-image: url("https://image.winudf.com/v2/image1/Y29tLm5leG9mdC5rb3JlYW5tb3ZpZXN0dnNlcmllc19zY3JlZW5fMF8xNTU1MDUyNzU3XzA5OA/screen-0.jpg?fakeurl=1&type=.jpg");
   background-color: #cccccc;
   height: 600px;
   background-position: center;

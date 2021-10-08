@@ -10,6 +10,22 @@ class Drama extends Model
     use HasFactory;
     protected $table='dramas';
 
+    protected $fillable = [
+        'name' ,
+        'photo',
+        'rate',
+        'story' ,
+        'cast',
+        'status',
+        'country',
+        'classification',
+        'year',
+        'trending',
+    ];
+
+
+    
+
 
     
 }

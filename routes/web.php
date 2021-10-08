@@ -2,26 +2,37 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
-
-/*
-Route::get('/', function () {
-    return view('home');
-});
-*/
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\DramaController;
+use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\UsersController;
 
 
-Route::get('/',[HomeController::class , 'showDramas']);
+
+//*main home with slider show without login */
+Route::get('/', [DramaController::class , 'showDramas']);
 
 
 //*redirect user and admins by roles*
 
-Route::get('/redirect',[HomeController::class , 'redirect']);
+Route::get('/redirect', [HomeController::class , 'redirect']);
+
+
+
 
 Route::group(['middleware' => 'auth'], function () {
 
 
-/********************************************dashboard operations*******************************************************/
+Route::get('/search'      , [HomeController::class,'Search']);
+
+Route::get('details/{id}' , [DramaController::class,'dramaDetails'])->name('drama.details');
+
+
+//*display home page and show posts
+
+Route::get('/userhome'  , [PostsController::class , 'showPosts']);
+
+/************************************************ dashboard operations *******************************************************/
 
 Route::get('/dashboard',function () {
     return view('dashboard');
@@ -35,22 +46,18 @@ Route::get('/addpost',function () {
 })->name('addpost');
 
 
-Route::post('/savepost' , [AdminController::class , 'savePost'])->name('savepost');
-
-//*display home page and show posts
-
-Route::get('/userhome'  ,[HomeController::class , 'showPosts']);
+Route::post('/savepost' , [PostsController::class , 'savePost'])->name('savepost');
 
 
 //*dramas operations*
 
-Route::get('showdramas' , [AdminController::class,'showDramas'])->name('showdramas');
+Route::get('showdramas' , [DramaController::class,'dramasTable'])->name('showdramas');
 
 
 
 
 //*movies operations*
-Route::get('showmovies'  , [AdminController::class,'showMovies'])->name('showmovies');
+Route::get('showmovies'  , [MoviesController::class,'moviesTable'])->name('showmovies');
 
 
 
@@ -58,7 +65,7 @@ Route::get('showmovies'  , [AdminController::class,'showMovies'])->name('showmov
 
 //*users operations*
 
-Route::get('showusers'  , [AdminController::class,'showUsers'])->name('showusers');
+Route::get('showusers'  , [UsersController::class,'usersTable'])->name('showusers');
 
 
 

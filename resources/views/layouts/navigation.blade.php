@@ -12,7 +12,7 @@
                     </x-nav-link>
 
                     <x-nav-link :href="route('addpost')" :active="request()->routeIs('addpost')">
-                        {{ __('Add Post') }}
+                        {{ __('Show Posts') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('showdramas')" :active="request()->routeIs('showdramas')">

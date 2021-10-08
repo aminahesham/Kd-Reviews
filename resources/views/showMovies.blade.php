@@ -62,6 +62,8 @@ a.button{
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Movies List :') }}
         </h2>
+        <button onclick="window.location.href='addpost'" style="color:#33cc33;">Add Movies</button>
+
     </x-slot>
 
     <div class="py-12">
@@ -93,7 +95,7 @@ a.button{
   <th scope="col">Country</th>
   <th scope="col">Year</th>
   <th scope="col">Type</th>
-  <th scope="col">Classfication</th>
+  <th scope="col">Sorting</th>
 
   <th scope="col">Edit</th>
 </tr>
@@ -113,11 +115,10 @@ a.button{
 
 
     <td>
+    <button onclick="window.location.href='{{url('admin/getuser/'.$movie->id)}}'" style="color:blue;">Update</button>
 
-    <a href="{{url('admin/getuser/'.$movie->id)}}" class="btn btn-warning" style="background-color: #3399ff">Update</a>
-<br><br><br>
-
-<a href="{{url('admin/deleteuser/'.$movie->id)}}" class="btn btn-warning" style="background-color:#ff4000">Delete</a>
+<br><br>
+<button onclick="window.location.href='{{url('admin/deleteuser/'.$movie->id)}}'" style="color:#ff4000;">Delete</button>
 
 
     </td>

@@ -62,6 +62,8 @@ a.button{
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Users List :') }}
         </h2>
+        <button onclick="window.location.href='addpost'" style="color:#cc0099;">Add user</button>
+
     </x-slot>
 
     <div class="py-12">
@@ -105,10 +107,10 @@ a.button{
 
     <td>
 
-    <a href="{{url('admin/getuser/'.$user->id)}}" class="btn btn-warning" style="background-color: #3399ff">Update</a>
+<button onclick="window.location.href='{{url('admin/getuser/'.$user->id)}}'" style="color:blue;">Update</button>
 
-
-    <a href="{{url('admin/deleteuser/'.$user->id)}}" class="btn btn-warning" style="background-color:#ff4000">Delete</a>
+<br><br>
+<button onclick="window.location.href='{{url('admin/deleteuser/'.$user->id)}}'" style="color:#ff4000;">Delete</button>
 
 
     </td>

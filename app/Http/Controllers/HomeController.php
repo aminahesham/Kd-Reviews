@@ -7,7 +7,6 @@ use App\Models\Drama;
 use App\Models\User;
 use App\Models\RoleUser; 
 use App\Models\Role;
-use App\Models\Post;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -19,24 +18,15 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public static function AddPost(){
-        return view('AddPost');
+    public function Search(Request $req){
+        $data = Drama :: where('name' , 'like' , '%' . $req -> input('query').'%') -> get();
+        return view('search' , ['dramas' => $data]);
+
     }
 
-    public function showPosts(){
-        $posts = Post :: all();
-        return view('UserHome' , ['posts' => $posts]);
-    }
-
-    public function showDramas(){
-        $dramas = Drama :: all();
-        return view('Home' ,['dramas' => $dramas]);
-    }
 
     
-
-    
-////******************************************** REDIRECT USER AND ADMIN *************************************************************************////
+/* redirect user to home page and redirect admin to dashboard */
    
     public function redirect(){
 
@@ -44,7 +34,7 @@ class HomeController extends Controller
 
         if($role->hasRole('normal_user')){
 
-            return view('userhome');
+            return view('MainHome');
         }
         else{
             return view('dashboard');
