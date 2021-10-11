@@ -22,6 +22,15 @@ class DramaController extends Controller
         return view('dramadetails' , ['dramas' => $data]);
     }
 
+    public function full (){
+        $dramas = Drama:: where ('status' , 'full' )->get();
+        return view ('DramaTypes' , compact('dramas'));
+    }
+
+    public function continous (){
+        $dramas = Drama:: where ('status' , 'continous' )->get();
+        return view ('DramaTypes' , compact('dramas'));
+    }
 
 /* admin shows dramas table */
 

@@ -5,7 +5,13 @@
 body {
 background-color:white;
 }
-
+form{
+    background-color:white;
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 8px;
+}
 table, td, th {  
   border: 1px solid #ddd;
   text-align: left;
@@ -54,9 +60,9 @@ a.button{
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dramas List :') }}
+            {{ __('Movies List :') }}
         </h2>
-        <button onclick="window.location.href='addpost'" style="color:blue;font-size:25px;">Add Drama</button>
+        <button onclick="window.location.href='addpost'" style="color:orange;font-size:25px;">Add Post</button>
 
     </x-slot>
 
@@ -76,50 +82,39 @@ a.button{
 @endif
 
 
-<table style="margin:5px;">
+<table style="width:100%;margin:5px;">
 
 
 <tr id="fr">
   <th scope="col">ID</th>
-  <th scope="col">Name</th>
+  <th scope="col">Title</th>
+  <th scope="col">Details</th>
   <th scope="col">Photo</th>
-  <th scope="col">Rate</th>
-  <th scope="col">Story</th>
-  <th scope="col">Cast</th>
-  <th scope="col">Status</th>
-  <th scope="col">Country</th>
-  <th scope="col">sorting</th>
+  <th scope="col">Source</th>
   <th scope="col">Created at</th>
   <th scope="col">Updated at</th>
-  <th scope="col">Year</th>
+  
   <th scope="col">Edit</th>
 </tr>
 
-  @foreach($dramas as $drama)
+  @foreach($posts as $post)
   <tr>
-  <th scope="row">{{$drama->id}}</th>
-    <td>{{$drama -> name}}</td>
-    <td><img class="slider-img" src="{{$drama['photo']}}"style="width:300px;height:150px;" ></td>
-    <td>{{$drama -> rate}}</td>
-    <td>{{$drama -> story}}</td>
-    <td>{{$drama -> cast}}</td>
-    <td>{{$drama -> status}}</td>
-    <td>{{$drama -> country}}</td>
-    <td>{{$drama -> classification}}</td>
-    <td>{{$drama -> created_at}}</td>
-    <td>{{$drama -> updated_at}}</td>
-    <td>{{$drama -> year}}</td>
+  <th scope="row">{{$post->id}}</th>
+    <td>{{$post -> title}}</td>
+    <td>{{$post -> details}}</td>
+    <td><img class="slider-img" src="{{$post['photo']}}"style="width:500px;height:200px;" ></td>
+    <td>{{$post -> source}}</td>
+    <td>{{$post -> created_at}}</td>
+    <td>{{$post -> updated_at}}</td>
 
-
+    
 
 
     <td>
+<button onclick="window.location.href='{{url('admin/getuser/'.$post->id)}}'" style="color:blue;">Update</button>
 
-    <button onclick="window.location.href='{{url('admin/getuser/'.$drama->id)}}'" style="color:blue;">Update</button>
-
-    <br><br>
-    <button onclick="window.location.href='{{url('admin/deleteuser/'.$drama->id)}}'" style="color:#ff4000;">Delete</button>
-
+<br><br>
+<button onclick="window.location.href='{{url('admin/deleteuser/'.$post->id)}}'" style="color:#ff4000;">Delete</button>
 
 
     </td>
@@ -127,6 +122,8 @@ a.button{
   </tr>
  
 </table>
+
+
 
     </div>
 </x-app-layout>

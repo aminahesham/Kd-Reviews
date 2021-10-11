@@ -29,4 +29,9 @@ class PostsController extends Controller
         return redirect()->back();
     }
 
+    public function postsTable(){
+        $posts = Post :: all();
+        return view('showpoststable' , ['posts' => $posts]);
+    }
+
 }

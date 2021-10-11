@@ -62,7 +62,7 @@ a.button{
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Movies List :') }}
         </h2>
-        <button onclick="window.location.href='addpost'" style="color:#33cc33;">Add Movies</button>
+        <button onclick="window.location.href='addpost'" style="color:#33cc33;font-size:25px;">Add Movies</button>
 
     </x-slot>
 
@@ -115,7 +115,7 @@ a.button{
 
 
     <td>
-    <button onclick="window.location.href='{{url('admin/getuser/'.$movie->id)}}'" style="color:blue;">Update</button>
+<button onclick="window.location.href='{{url('admin/getuser/'.$movie->id)}}'" style="color:blue;">Update</button>
 
 <br><br>
 <button onclick="window.location.href='{{url('admin/deleteuser/'.$movie->id)}}'" style="color:#ff4000;">Delete</button>

@@ -12,13 +12,13 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in as admin!
                     <br>
-                    <button onclick="window.location.href='addpost'" style="color:orange;">Add Post</button>
+                    <button onclick="window.location.href='addpost'" style="color:orange;font-size:25px;">Add Post</button>
                     <br>
-                    <button onclick="window.location.href='addpost'" style="color:blue;">Add Drama</button>
+                    <button onclick="window.location.href='addpost'" style="color:blue;font-size:25px;">Add Drama</button>
                     <br>
-                    <button onclick="window.location.href='addpost'" style="color:#33cc33;">Add Movies</button>
+                    <button onclick="window.location.href='addpost'" style="color:#33cc33;font-size:25px;">Add Movies</button>
                     <br>
-                    <button onclick="window.location.href='addpost'" style="color:#cc0099;">Add user</button>
+                    <button onclick="window.location.href='addpost'" style="color:#cc0099;font-size:25px;">Add user</button>
 
 
                 </div>

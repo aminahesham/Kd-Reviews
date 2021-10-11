@@ -24,17 +24,19 @@
 
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Drama <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" style="color:#003366;">Full</a></li>
-          <li><a href="#" style="color:#003366;">Continous</a></li>
+        <li><a href="{{url('fulldrama')}}" style="color:#003366;">Full</a></li>
+          <li><a href="{{url('continousdrama')}}" style="color:#003366;">Continous</a></li>
         </ul>
       </li>
 
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Movies <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" style="color:#003366;">Horrible</a></li>
-          <li><a href="#" style="color:#003366;">Suspiness</a></li>
-          <li><a href="#" style="color:#003366;">Comedy / Romantic</a></li>
-          <li><a href="#" style="color:#003366;">Fantasy</a></li>
+          <li><a href="{{url('horrible')}}" style="color:#003366;">Horrible</a></li>
+          <li><a href="{{url('suspense')}}"style="color:#003366;">Suspense </a></li>
+          <li><a href="{{url('action')}}" style="color:#003366;">Action </a></li>
+          <li><a href="{{url('romantic')}}" style="color:#003366;">Romantic </a></li>
+          <li><a href="{{url('comedy')}}" style="color:#003366;">Comedy </a></li>
+          <li><a href="{{url('fantasy')}}" style="color:#003366;">Fantasy</a></li>
 
         </ul>
       </li>

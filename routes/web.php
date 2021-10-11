@@ -49,17 +49,36 @@ Route::get('/addpost',function () {
 Route::post('/savepost' , [PostsController::class , 'savePost'])->name('savepost');
 
 
+Route::get('poststable' , [PostsController::class,'postsTable'])->name('poststable');
+
+
+
 //*dramas operations*
 
 Route::get('showdramas' , [DramaController::class,'dramasTable'])->name('showdramas');
 
+Route::get('fulldrama'      , [DramaController::class,'full'])->name('fulldrama');
+Route::get('continousdrama' , [DramaController::class,'continous'])->name('continousdrama');
+
+
+Route::get('dramadetails/{id}'   , [DramaController::class,'dramaDetails']);
 
 
 
 //*movies operations*
+
+//*admin show movies table*
 Route::get('showmovies'  , [MoviesController::class,'moviesTable'])->name('showmovies');
 
+Route::get('horrible'  , [MoviesController::class,'horrible']);
+Route::get('suspense'  , [MoviesController::class,'suspense']);
+Route::get('action'    , [MoviesController::class,'action']);
+Route::get('comedy'    , [MoviesController::class,'comedy']);
+Route::get('romantic'  , [MoviesController::class,'romantic']);
+Route::get('comedy'    , [MoviesController::class,'comedy']);
+Route::get('fantasy'         , [MoviesController::class,'fantasy']);
 
+Route::get('moviedetails/{id}'   , [MoviesController::class,'MovieDetails']);
 
 
 

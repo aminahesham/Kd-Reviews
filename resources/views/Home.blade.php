@@ -2,11 +2,9 @@
 use App\Models\Drama;
 use App\Models\Movies;
 use Illuminate\Support\Facades\DB;
-$trendingDramas = Drama:: where ('trending' , 1)
-            ->get();
+$trendingDramas = Drama:: where ('trending' , 1)->get();
 
- $trendingMovies = Movies:: where ('trending' , 1)
-            ->get();
+ $trendingMovies = Movies:: where ('trending' , 1)->get();
 
 
 ?>
@@ -76,6 +74,7 @@ img.slider-img{
     margin:30px;
 }
 
+
 </style>
 
 <body>
@@ -88,16 +87,18 @@ img.slider-img{
     <ul class="nav navbar-nav">
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Drama <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" style="color:#003366;">Full</a></li>
-          <li><a href="#" style="color:#003366;">Continous</a></li>
+          <li><a href="{{url('fulldrama')}}" style="color:#003366;">Full</a></li>
+          <li><a href="{{url('continousdrama')}}" style="color:#003366;">Continous</a></li>
         </ul>
       </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Movies<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#" style="color:#003366;">Horrible</a></li>
-          <li><a href="#" style="color:#003366;">Suspiness</a></li>
-          <li><a href="#" style="color:#003366;">Comedy / Romantic</a></li>
-          <li><a href="#" style="color:#003366;">Fantasy</a></li>
+          <li><a href="{{url('horrible')}}" style="color:#003366;">Horrible</a></li>
+          <li><a href="{{url('suspense')}}"style="color:#003366;">Suspines </a></li>
+          <li><a href="{{url('action')}}" style="color:#003366;">Action </a></li>
+          <li><a href="{{url('romantic')}}" style="color:#003366;">Romantic </a></li>
+          <li><a href="{{url('comedy')}}" style="color:#003366;">Comedy </a></li>
+          <li><a href="{{url('fantasy')}}" style="color:#003366;">Fantasy</a></li>
 
         </ul>
       </li>
@@ -190,6 +191,8 @@ img.slider-img{
     </div>
     @endforeach
 </div>
+
+
 
 
 
