@@ -57,6 +57,8 @@ Route::get('poststable' , [PostsController::class,'postsTable'])->name('poststab
 
 Route::get('showdramas' , [DramaController::class,'dramasTable'])->name('showdramas');
 
+Route::get('alldramas'      , [DramaController::class,'allDramas'])->name('alldramas');
+
 Route::get('fulldrama'      , [DramaController::class,'full'])->name('fulldrama');
 Route::get('continousdrama' , [DramaController::class,'continous'])->name('continousdrama');
 
@@ -69,6 +71,8 @@ Route::get('dramadetails/{id}'   , [DramaController::class,'dramaDetails']);
 
 //*admin show movies table*
 Route::get('showmovies'  , [MoviesController::class,'moviesTable'])->name('showmovies');
+
+Route::get('allmovies'  , [MoviesController::class,'allMovies']);
 
 Route::get('horrible'  , [MoviesController::class,'horrible']);
 Route::get('suspense'  , [MoviesController::class,'suspense']);

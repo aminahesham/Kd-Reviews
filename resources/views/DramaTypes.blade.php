@@ -13,7 +13,7 @@ body{
 
 
 </style>
-<div  style="margin:10px; border-color: #996666; border-radius: 15px 50px;" class="container">
+<div  style="margin:10px; border-color: #996666; border-radius: 15px 50px;" class="">
 @foreach($dramas as $item)
   <div  class="trending-items">
   <a href="dramadetails/{{$item['id']}}">

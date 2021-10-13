@@ -15,6 +15,11 @@ class MoviesController extends Controller
         return view ('showmovies' , compact('movies'));
     }
 
+    public function allMovies (){
+        $movies = Movies::all();
+        return view ('MoviesTypes' , compact('movies'));
+    }
+
     public function horrible (){
         $movies = Movies:: where ('type' , 'horrible')->get();
         return view ('MoviesTypes' , compact('movies'));

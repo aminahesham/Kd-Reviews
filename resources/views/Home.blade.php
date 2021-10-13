@@ -12,6 +12,8 @@ $trendingDramas = Drama:: where ('trending' , 1)->get();
 <html lang="en">
 <head>
   <title>Kd-Reviews</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.apklat.com/wp-content/uploads/2019/01/Korean-Drama-English-Subtitle-Download-Latest-Version-APK.png" />
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

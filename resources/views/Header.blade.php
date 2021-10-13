@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <title>Kd-Reviews</title>
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.apklat.com/wp-content/uploads/2019/01/Korean-Drama-English-Subtitle-Download-Latest-Version-APK.png" />
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -24,6 +26,7 @@
 
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Drama <span class="caret"></span></a>
         <ul class="dropdown-menu">
+        <li><a href="{{url('alldramas')}}" style="color:#003366;">All</a></li>
         <li><a href="{{url('fulldrama')}}" style="color:#003366;">Full</a></li>
           <li><a href="{{url('continousdrama')}}" style="color:#003366;">Continous</a></li>
         </ul>
@@ -31,6 +34,7 @@
 
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Movies <span class="caret"></span></a>
         <ul class="dropdown-menu">
+        <li><a href="{{url('allmovies')}}" style="color:#003366;">All</a></li>
           <li><a href="{{url('horrible')}}" style="color:#003366;">Horrible</a></li>
           <li><a href="{{url('suspense')}}"style="color:#003366;">Suspense </a></li>
           <li><a href="{{url('action')}}" style="color:#003366;">Action </a></li>

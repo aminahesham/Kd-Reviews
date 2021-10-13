@@ -10,16 +10,20 @@ class DramaController extends Controller
 {
     //
 
-/*slider in main home page shows dramas photos  */
+/*slider in first home page shows dramas photos  */
     public function showDramas(){
-        $dramas = Drama :: all();
-
+        $dramas = Drama :: all( );
         return view('Home' ,['dramas' => $dramas]);
     }
 
     public function dramaDetails($id){
         $data =Drama :: find($id);
         return view('dramadetails' , ['dramas' => $data]);
+    }
+
+    public function allDramas (){
+        $dramas = Drama:: all ();
+        return view ('DramaTypes' , compact('dramas'));
     }
 
     public function full (){
