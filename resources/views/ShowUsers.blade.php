@@ -62,7 +62,6 @@ a.button{
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Users List :') }}
         </h2>
-        <button onclick="window.location.href='addpost'" style="color:#cc0099;font-size:25px;">Add user</button>
 
     </x-slot>
 

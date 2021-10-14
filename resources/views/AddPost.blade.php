@@ -49,10 +49,12 @@ body {
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                 <div  class="container">
-
+<form id="form" method="POST" action="{{URL('/addpost')}}" enctype="multipart/form-data">
+@csrf
 <div class="form-group">
+  
   <label for="title"  ><b> Report Title :</b></label><br><br>
-  <textarea class="col-sm-2 col-form-label text-danger"  id="input" name="title"  cols="50" rows="2" size="50" multiple></textarea><br>
+  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="title"  size="50" multiple><br>
 </div>      
 <br>
 
@@ -72,6 +74,7 @@ body {
 </div>
 <br>
   <input type="submit" id="submit" value="save" formmethod="POST" formaction="{{url('savepost')}}"><br>
+
 
 
 

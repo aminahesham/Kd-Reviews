@@ -43,6 +43,27 @@ class DramaController extends Controller
         return view('ShowDramas',compact('dramas'));
 
     }
+    
+/* admin save new drama in database */
+
+    public function saveDrama(Request $requ){
+      
+        Drama::create([
+       'name'           => $requ -> name,
+       'story'          => $requ -> story,
+       'photo'          => $requ -> photo,
+       'rate'           => $requ -> rate,
+       'cast'           => $requ -> cast,
+       'status'         => $requ -> status,
+       'country'        => $requ -> country,
+       'classification' => $requ -> classification,
+       'year'           => $requ -> year,
+       'trending'       => $requ -> trending,
+
+
+        ]);
+        return redirect()->back();
+    }
 
     
 }

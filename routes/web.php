@@ -43,8 +43,7 @@ Route::get('/dashboard',function () {
 
 Route::get('/addpost',function () {
     return view('addpost');
-})->name('addpost');
-
+});
 
 Route::post('/savepost' , [PostsController::class , 'savePost'])->name('savepost');
 
@@ -55,7 +54,7 @@ Route::get('poststable' , [PostsController::class,'postsTable'])->name('poststab
 
 //*dramas operations*
 
-Route::get('showdramas' , [DramaController::class,'dramasTable'])->name('showdramas');
+Route::get('showdramas'     , [DramaController::class,'dramasTable'])->name('showdramas');
 
 Route::get('alldramas'      , [DramaController::class,'allDramas'])->name('alldramas');
 
@@ -65,14 +64,19 @@ Route::get('continousdrama' , [DramaController::class,'continous'])->name('conti
 
 Route::get('dramadetails/{id}'   , [DramaController::class,'dramaDetails']);
 
+Route::get('/adddrama',function () {
+    return view('adddrama');
+});
+
+Route::post('/savedrama' , [DramaController::class , 'saveDrama']);
 
 
 //*movies operations*
 
 //*admin show movies table*
-Route::get('showmovies'  , [MoviesController::class,'moviesTable'])->name('showmovies');
+Route::get('showmovies', [MoviesController::class,'moviesTable'])->name('showmovies');
 
-Route::get('allmovies'  , [MoviesController::class,'allMovies']);
+Route::get('allmovies' , [MoviesController::class,'allMovies']);
 
 Route::get('horrible'  , [MoviesController::class,'horrible']);
 Route::get('suspense'  , [MoviesController::class,'suspense']);
@@ -80,16 +84,21 @@ Route::get('action'    , [MoviesController::class,'action']);
 Route::get('comedy'    , [MoviesController::class,'comedy']);
 Route::get('romantic'  , [MoviesController::class,'romantic']);
 Route::get('comedy'    , [MoviesController::class,'comedy']);
-Route::get('fantasy'         , [MoviesController::class,'fantasy']);
+Route::get('fantasy'   , [MoviesController::class,'fantasy']);
 
 Route::get('moviedetails/{id}'   , [MoviesController::class,'MovieDetails']);
+
+Route::get('/addmovie',function () {
+    return view('addmovie');
+});
+
+Route::post('/savemovie' , [MoviesController::class , 'saveMovie']);
 
 
 
 //*users operations*
 
 Route::get('showusers'  , [UsersController::class,'usersTable'])->name('showusers');
-
 
 
 

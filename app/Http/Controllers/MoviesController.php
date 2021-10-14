@@ -56,5 +56,25 @@ class MoviesController extends Controller
     }
 
 
+    /* admin save new movie in database */
+
+    public function saveMovie(Request $requ){
+      
+        Movies::create([
+       'name'           => $requ -> name,
+       'story'          => $requ -> story,
+       'photo'          => $requ -> photo,
+       'rate'           => $requ -> rate,
+       'cast'           => $requ -> cast,
+       'type'           => $requ -> type,
+       'country'        => $requ -> country,
+       'classification' => $requ -> classification,
+       'year'           => $requ -> year,
+       'trending'       => $requ -> trending,
+
+
+        ]);
+        return redirect()->back();
+    }
 
 }

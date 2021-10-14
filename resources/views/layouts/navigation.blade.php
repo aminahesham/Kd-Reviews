@@ -23,9 +23,7 @@
                         {{ __('Movies') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('showusers')" :active="request()->routeIs('showusers')">
-                        {{ __('Users List') }}
-                    </x-nav-link>
+                   
 
 
 
