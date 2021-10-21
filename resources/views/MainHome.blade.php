@@ -34,6 +34,31 @@ body {
   transform: translate(-50%, -50%);
   color: white;
 }
+img{
+  border: 2px solid blue;
+  border-radius: 15px 50px;
+
+}
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  background-color :#336699;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: orange;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
 
 </style>
 
@@ -45,6 +70,7 @@ body {
 <br>
 
 <h2 style="color:darkblue;text-align: center;text-shadow: 2px 2px 4px #000000;">New Posts !</h2>
+
 
 <div class="container" style="margin:10px; border-color: #996666; border-radius: 15px 50px;">
 
@@ -59,6 +85,11 @@ body {
 </p>
 
 @endforeach
+</div>
+
+<div class="pagination">
+  <a href="#">❮</a>
+  <a href="#">❯</a>
 </div>
 
 </div>

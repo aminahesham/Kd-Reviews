@@ -2,9 +2,9 @@
 use App\Models\Drama;
 use App\Models\Movies;
 use Illuminate\Support\Facades\DB;
-$trendingDramas = Drama:: where ('trending' , 1)->get();
+$trendingDramas = Drama:: where ('trending' , 1)->paginate(5);
 
- $trendingMovies = Movies:: where ('trending' , 1)->get();
+$trendingMovies = Movies:: where ('trending' , 1)->paginate(5);
 
 
 ?>
@@ -61,21 +61,54 @@ img.slider-img{
     background: #D3D3D3 (20%);
   
 }
-.trending-img{
-    height:200px;
-    margin:20px;
-    width:250px;
-}
-.trending-items{
-    float:left;
-    position: relative;
-    width: 20%;
-    
-}
 .trending-wrapper{
     margin:30px;
 }
+a:hover{
+  text-decoration: none;
+ 
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+}
 
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 300px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+.pagination {
+  display: inline-block;
+  text-align: center;
+
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+.pagination a:hover:not(.active) {background-color:#e6ccff;}
 
 </style>
 
@@ -84,19 +117,28 @@ img.slider-img{
 <nav class="navbar navbar-inverse" style="background-color:#736699;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" style="color:#c2c2a3;  text-shadow: 2px 2px 4px #000000;">Kd-Reviews</a>
+    <a href="{{url('/')}}" class="navbar-brand" style="color:#c2c2a3;  text-shadow: 2px 2px 4px #000000;">Kd-Reviews</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Drama <span class="caret"></span></a>
+
+    <li class=""><a class="" data-toggle="" href="{{url('userhome')}}" style="color:white;">Home <span class=""></span></a>
+      </li>
+
+      <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"  style="color:white;">Drama <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="{{url('fulldrama')}}" style="color:#003366;">Full</a></li>
+        <li><a href="{{url('alldramas')}}" style="color:#003366;">All</a></li>
+        <li><a href="{{url('trendingdrama')}}" style="color:#003366;">Trending</a></li>
+        <li><a href="{{url('fulldrama')}}" style="color:#003366;">Full</a></li>
           <li><a href="{{url('continousdrama')}}" style="color:#003366;">Continous</a></li>
         </ul>
       </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Movies<span class="caret"></span></a>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Movies <span class="caret"></span></a>
         <ul class="dropdown-menu">
+        <li><a href="{{url('allmovies')}}" style="color:#003366;">All</a></li>
+        <li><a href="{{url('trendingmovie')}}" style="color:#003366;">Trending</a></li>
           <li><a href="{{url('horrible')}}" style="color:#003366;">Horrible</a></li>
-          <li><a href="{{url('suspense')}}"style="color:#003366;">Suspines </a></li>
+          <li><a href="{{url('suspense')}}"style="color:#003366;">Suspense </a></li>
           <li><a href="{{url('action')}}" style="color:#003366;">Action </a></li>
           <li><a href="{{url('romantic')}}" style="color:#003366;">Romantic </a></li>
           <li><a href="{{url('comedy')}}" style="color:#003366;">Comedy </a></li>
@@ -160,39 +202,46 @@ img.slider-img{
 
 
  <!-- Trending Dramas -->
-<div  style="margin:10px; border-color: #996666; border-radius: 15px 50px;" class="container">
-<h3 style="color:darkblue;text-align:center;text-shadow: 2px 2px 4px #000000;">Trending Dramas</h3>
-<h4 style="text-align:center;">most viewed dramas</h4>
+ <div style="margin:10px;" class="container">
+<h3 style="color:darkblue;text-align:center;text-shadow: 2px 2px 4px #000000;">*Trending Dramas*</h3>
 @foreach($trendingDramas as $item)
-  <div  class="trending-items">
-  <a href="details/{{$item['id']}}">
-        <img style="padding-right:40px;" class="trending-img" src="{{$item['photo']}}" >
-      <div class="">
-      <h4 style='color:black'>{{$item['name']}}</h4>
-      </div>
-      </a>
-    </div>
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="dramadetails/{{$item['id']}}">
+      <img src="{{$item['photo']}}" alt="Cinque Terre" width="200" height="300">
+    </a>
+    <div class="desc">{{$item['name']}}</div>
+  </div>
+</div>
     @endforeach
+<div class="pagination">
+  <a href="{{url('/trendingdrama')}}">❯❯</a>
+  <a href="{{url('/trendingdrama')}}"> Next</a>
+</div>
 </div>
 
 
 
  <!-- Trending Movies -->
 
-<div style="margin:10px; border-color: #996666; border-radius: 15px 50px;" class="container">
-<h3 style="color:darkblue;text-align:center;text-shadow: 2px 2px 4px #000000;">Trending Movies</h3>
-<h4 style="text-align:center;">most viewed movies</h4>
+<div style="margin:10px; " class="container">
+<h3 style="color:darkblue;text-align:center;text-shadow: 2px 2px 4px #000000;">*Trending Movies*</h3>
 @foreach($trendingMovies as $item)
-  <div class="trending-items">
-  <a href="">
-      <img style="padding-right:40px;" class="trending-img" src="{{$item['photo']}}" >
-      <div style="padding-right:40px;" class="">
-      <h4 style='color:black'>{{$item['name']}}</h4>
-      </div>
-      </a>
-    </div>
-    @endforeach
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="moviedetails/{{$item['id']}}">
+      <img src="{{$item['photo']}}" alt="Cinque Terre" width="200" height="300">
+    </a>
+    <div class="desc">{{$item['name']}}</div>
+  </div>
 </div>
+    @endforeach
+    <div class="pagination">
+  <a href="{{url('/trendingmovie')}}">❯❯</a>
+  <a href="{{url('/trendingmovie')}}"> Next</a>
+</div>
+</div>
+
 
 
 

@@ -40,7 +40,7 @@ body {
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Add New Drama') }}
+            {{ __('Add New Movie') }}
         </h2>
     </x-slot>
 
@@ -49,23 +49,12 @@ body {
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                 <div  class="container">
-<form id="form" method="POST" action="{{URL('/adddrama')}}" enctype="multipart/form-data">
+<form id="form" method="POST" action="{{URL('/addmovie')}}" enctype="multipart/form-data">
 @csrf
 <div class="form-group">
-  <label for="title"  ><b> Drama Name :</b></label><br><br>
+  <label for="title"  ><b> Movie Name :</b></label><br><br>
   <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="name"  size="50" multiple><br>
 </div>      
-<br>
-
-<div class="form-group">
-  <label for="details" ><b> Rate :</b></label><br><br>
-  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="rate"  size="50" multiple><br>
-</div>      
-<br>
-<div class="form-group">
-  <label for="photo"  ><b>Photo :</b></label><br>
-  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="photo"  size="50" multiple><br>
-</div>
 <br>
 <div class="form-group">
   <label for="source" ><b>Story :</b></label><br>
@@ -73,23 +62,28 @@ body {
 </div>
 <br>
 <div class="form-group">
-  <label for="details" ><b> Country :</b></label><br><br>
-  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="country"  size="50" multiple><br>
-</div>      
+  <label for="photo"  ><b>Photo :</b></label><br>
+  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="photo"  size="50" multiple><br>
+</div>
 <br>
 <div class="form-group">
-  <label for="details" ><b> Year :</b></label><br><br>
-  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="year"  size="50" multiple><br>
-</div>      
-<br>
-<div class="form-group">
-  <label for="details" ><b> Status :</b></label><br><br>
-  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="status"  size="50" multiple><br>
-</div>      
-<br>
+  <label for="details" ><b> Rate :</b></label><br><br>
+  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="rate"  size="50" multiple><br>
+</div> 
+<br> 
 <div class="form-group">
   <label for="details" ><b> Cast :</b></label><br><br>
   <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="cast"  size="50" multiple><br>
+</div>          
+<br>
+<div class="form-group">
+  <label for="details" ><b> Type :</b></label><br><br>
+  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="type"  size="50" multiple><br>
+</div>      
+<br>
+<div class="form-group">
+  <label for="details" ><b> Country :</b></label><br><br>
+  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="country"  size="50" multiple><br>
 </div>      
 <br>
 <div class="form-group">
@@ -98,11 +92,16 @@ body {
 </div>      
 <br>
 <div class="form-group">
+  <label for="details" ><b> Year :</b></label><br><br>
+  <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="year"  size="50" multiple><br>
+</div>      
+<br>
+<div class="form-group">
   <label for="details" ><b> Trending :</b></label><br><br>
   <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="trending"  size="50" multiple><br>
 </div>      
 <br>
-  <input type="submit" id="submit" value="save" formmethod="POST" formaction="{{url('savedrama')}}"><br>
+  <input type="submit" id="submit" value="save" formmethod="POST" formaction="{{url('savemovie')}}"><br>
 
 
 

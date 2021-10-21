@@ -34,14 +34,11 @@ a{
     display:inline;
 }
 a:hover {
-  color: #ffffcc;
+  color: blue;
   background-color: transparent;
   text-decoration: none;
 }
 
-.active {
-  background-color: #4CAF50;
-}
 a.button{
    cursor:pointer; 
    margin:10px;
@@ -54,7 +51,34 @@ a.button{
   margin:4px;
   padding:8px;
 }
+#btn:link, #btn:visited {
+  background-color:  #66d9ff;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:100px;
+}
 
+#btn:hover, #btn:active {
+  background-color: #0099e6;
+  color: white;
+}
+#btn-red:link, #btn-red:visited {
+  background-color: #ff4d4d;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:100px;
+}
+
+#btn-red:hover, #btn-red:active {
+  background-color: red;
+  color: white;
+}
 </style> 
 <x-app-layout>
 
@@ -62,7 +86,7 @@ a.button{
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Movies List :') }}
         </h2>
-        <button onclick="window.location.href='addpost'" style="color:#33cc33;font-size:25px;">Add Movies</button>
+        <a href="{{url('addmovie')}}" class="btn btn-info" role="button">Add New Movie</a>
 
     </x-slot>
 
@@ -115,10 +139,8 @@ a.button{
 
 
     <td>
-<button onclick="window.location.href='{{url('admin/getuser/'.$movie->id)}}'" style="color:blue;">Update</button>
-
-<br><br>
-<button onclick="window.location.href='{{url('admin/deleteuser/'.$movie->id)}}'" style="color:#ff4000;">Delete</button>
+    <a href="{{url('admin/getmovie/'.$movie->id)}}" target="_blank" id="btn">Update</a><br><br>
+    <a href="{{url('admin/deletemovie/'.$movie->id)}}" target="_blank" id="btn-red">Delete</a>
 
 
     </td>

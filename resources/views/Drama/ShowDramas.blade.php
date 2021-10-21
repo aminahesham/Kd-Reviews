@@ -28,25 +28,46 @@ a{
     display:inline;
 }
 a:hover {
-  color: #ffffcc;
+  color: blue;
   background-color: transparent;
   text-decoration: none;
 }
 
-.active {
-  background-color: #4CAF50;
-}
-a.button{
-   cursor:pointer; 
-   margin:10px;
-   padding:10px;
-}
+
 #fr {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
   margin:4px;
   padding:8px;
+}
+#btn:link, #btn:visited {
+  background-color:  #66d9ff;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:100px;
+}
+
+#btn:hover, #btn:active {
+  background-color: #0099e6;
+  color: white;
+}
+#btn-red:link, #btn-red:visited {
+  background-color: #ff4d4d;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:100px;
+}
+
+#btn-red:hover, #btn-red:active {
+  background-color: red;
+  color: white;
 }
 
 </style> 
@@ -56,24 +77,13 @@ a.button{
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dramas List :') }}
         </h2>
-        <button onclick="window.location.href='addpost'" style="color:blue;font-size:25px;">Add Drama</button>
+        <a href="{{url('adddrama')}}" class="btn btn-info" role="button">Add New Drama</a>
 
     </x-slot>
 
     <div class="py-12">
 
-@if(Session::has('productdeleted'))
-            <div align="center" class="alert alert-success" role="alert" style="color:white; font-size:30px">
-                {{ Session::get('productdeleted') }}
-            </div>
-@endif
 
-
-@if(Session::has('notfound'))
-            <div align="center" class="alert alert-success" role="alert" style="color:yellow; font-size:30px" >
-                {{ Session::get('notfound') }}
-            </div>
-@endif
 
 
 <table style="margin:5px;">
@@ -115,10 +125,11 @@ a.button{
 
     <td>
 
-    <button onclick="window.location.href='{{url('admin/getuser/'.$drama->id)}}'" style="color:blue;">Update</button>
+    <a href="{{url('admin/getdrama/'.$drama->id)}}" target="_blank" id="btn">Update</a><br><br>
+    <a href="{{url('admin/deletedrama/'.$drama->id)}}" target="_blank" id="btn-red">Delete</a>
+
 
     <br><br>
-    <button onclick="window.location.href='{{url('admin/deleteuser/'.$drama->id)}}'" style="color:#ff4000;">Delete</button>
 
 
 

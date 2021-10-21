@@ -17,16 +17,17 @@
 <nav class="navbar navbar-inverse" style="background-color:#736699;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" style="color:#c2c2a3;  text-shadow: 2px 2px 4px #000000;">Kd-Reviews</a>
+      <a href="{{url('/')}}" class="navbar-brand" style="color:#c2c2a3;  text-shadow: 2px 2px 4px #000000;">Kd-Reviews</a>
     </div>
     <ul class="nav navbar-nav">
 
     <li class=""><a class="" data-toggle="" href="{{url('userhome')}}" style="color:white;">Home <span class=""></span></a>
       </li>
 
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Drama <span class="caret"></span></a>
+      <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"  style="color:white;">Drama <span class="caret"></span></a>
         <ul class="dropdown-menu">
         <li><a href="{{url('alldramas')}}" style="color:#003366;">All</a></li>
+        <li><a href="{{url('trendingdrama')}}" style="color:#003366;">Trending</a></li>
         <li><a href="{{url('fulldrama')}}" style="color:#003366;">Full</a></li>
           <li><a href="{{url('continousdrama')}}" style="color:#003366;">Continous</a></li>
         </ul>
@@ -35,6 +36,7 @@
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white;">Movies <span class="caret"></span></a>
         <ul class="dropdown-menu">
         <li><a href="{{url('allmovies')}}" style="color:#003366;">All</a></li>
+        <li><a href="{{url('trendingmovie')}}" style="color:#003366;">Trending</a></li>
           <li><a href="{{url('horrible')}}" style="color:#003366;">Horrible</a></li>
           <li><a href="{{url('suspense')}}"style="color:#003366;">Suspense </a></li>
           <li><a href="{{url('action')}}" style="color:#003366;">Action </a></li>

@@ -1,17 +1,17 @@
+<?php
+use App\Http\Controllers\UserController;
+use App\Models\Role; 
 
+$roles=Role::all();
+
+?>
 
 <style>
 
 body {
 background-color:white;
 }
-form{
-    background-color:white;
-    border: 3px solid white;
-    border-radius: 10px;
-    padding: 8px;
-    margin: 8px;
-}
+
 table, td, th {  
   border: 1px solid #ddd;
   text-align: left;
@@ -34,13 +34,9 @@ a{
     display:inline;
 }
 a:hover {
-  color: #ffffcc;
+  color: blue;
   background-color: transparent;
   text-decoration: none;
-}
-
-.active {
-  background-color: #4CAF50;
 }
 a.button{
    cursor:pointer; 
@@ -50,7 +46,7 @@ a.button{
 #fr {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 99%;
   margin:4px;
   padding:8px;
 }
@@ -60,17 +56,17 @@ a.button{
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Movies List :') }}
+            {{ __('Users List :') }}
         </h2>
-        <button onclick="window.location.href='addpost'" style="color:orange;font-size:25px;">Add Post</button>
 
     </x-slot>
 
     <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-@if(Session::has('productdeleted'))
+@if(Session::has('userdeleted'))
             <div align="center" class="alert alert-success" role="alert" style="color:white; font-size:30px">
-                {{ Session::get('productdeleted') }}
+                {{ Session::get('userdeleted') }}
             </div>
 @endif
 
@@ -82,39 +78,34 @@ a.button{
 @endif
 
 
-<table style="width:100%;margin:5px;">
+<table style="width:99%;margin:5px;">
 
 
 <tr id="fr">
   <th scope="col">ID</th>
-  <th scope="col">Title</th>
-  <th scope="col">Details</th>
-  <th scope="col">Photo</th>
-  <th scope="col">Source</th>
-  <th scope="col">Created at</th>
-  <th scope="col">Updated at</th>
-  
+  <th scope="col">Name</th>
+  <th scope="col">E-mail</th>
+  <th scope="col">Roles</th>
   <th scope="col">Edit</th>
 </tr>
 
-  @foreach($posts as $post)
+  @foreach($users as $index=>$user)
   <tr>
-  <th scope="row">{{$post->id}}</th>
-    <td>{{$post -> title}}</td>
-    <td>{{$post -> details}}</td>
-    <td><img class="slider-img" src="{{$post['photo']}}"style="width:500px;height:200px;" ></td>
-    <td>{{$post -> source}}</td>
-    <td>{{$post -> created_at}}</td>
-    <td>{{$post -> updated_at}}</td>
-
-    
-
+  <th scope="row">{{$user->id}}</th>
+    <td>{{$user -> name}}</td>
+    <td>{{$user -> email}}</td>
+    <td>
+      @foreach($user->roles as $role)
+      {{ $role ->display_name }}
+     @endforeach
+    </td>
 
     <td>
-<button onclick="window.location.href='{{url('admin/getuser/'.$post->id)}}'" style="color:blue;">Update</button>
+
+<button onclick="window.location.href='{{url('admin/getuser/'.$user->id)}}'" style="color:blue;">Update</button>
 
 <br><br>
-<button onclick="window.location.href='{{url('admin/deleteuser/'.$post->id)}}'" style="color:#ff4000;">Delete</button>
+<button onclick="window.location.href='{{url('admin/deleteuser/'.$user->id)}}'" style="color:#ff4000;">Delete</button>
 
 
     </td>
@@ -125,5 +116,6 @@ a.button{
 
 
 
+        </div>
     </div>
 </x-app-layout>

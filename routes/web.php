@@ -10,13 +10,12 @@ use App\Http\Controllers\UsersController;
 
 
 //*main home with slider show without login */
-Route::get('/', [DramaController::class , 'showDramas']);
+Route::get('/'            , [DramaController::class , 'showDramas']);
 
 
 //*redirect user and admins by roles*
 
-Route::get('/redirect', [HomeController::class , 'redirect']);
-
+Route::get('/redirect'    , [HomeController::class , 'redirect']);
 
 
 
@@ -25,50 +24,52 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/search'      , [HomeController::class,'Search']);
 
-Route::get('details/{id}' , [DramaController::class,'dramaDetails'])->name('drama.details');
-
 
 //*display home page and show posts
 
-Route::get('/userhome'  , [PostsController::class , 'showPosts']);
+Route::get('/userhome'    , [PostsController::class , 'showPosts']);
 
 /************************************************ dashboard operations *******************************************************/
 
 Route::get('/dashboard',function () {
-    return view('dashboard');
+    return view('Dashboard/Dashboard');
 })->name('dashboard');
 
 
 //*add new posts and save them in database *
 
-Route::get('/addpost',function () {
-    return view('addpost');
-});
+Route::get('/addpost'              , [PostsController::class , 'addPost']);
 
-Route::post('/savepost' , [PostsController::class , 'savePost'])->name('savepost');
+Route::post('/savepost'            , [PostsController::class , 'savePost'])->name('savepost');
 
+Route::get('poststable'            , [PostsController::class,'postsTable'])->name('poststable');
 
-Route::get('poststable' , [PostsController::class,'postsTable'])->name('poststable');
-
+Route::get('admin/deletepost/{id}' , [PostsController::class,'deletePost']);
 
 
 //*dramas operations*
 
-Route::get('showdramas'     , [DramaController::class,'dramasTable'])->name('showdramas');
+Route::get('showdramas'          , [DramaController::class,'dramasTable'])->name('showdramas');
 
-Route::get('alldramas'      , [DramaController::class,'allDramas'])->name('alldramas');
+Route::get('alldramas'           , [DramaController::class,'allDramas'])->name('alldramas');
 
-Route::get('fulldrama'      , [DramaController::class,'full'])->name('fulldrama');
-Route::get('continousdrama' , [DramaController::class,'continous'])->name('continousdrama');
+Route::get('fulldrama'           , [DramaController::class,'full'])->name('fulldrama');
 
+Route::get('continousdrama'      , [DramaController::class,'continous'])->name('continousdrama');
 
 Route::get('dramadetails/{id}'   , [DramaController::class,'dramaDetails']);
 
 Route::get('/adddrama',function () {
-    return view('adddrama');
+    return view('Drama/AddDrama');
 });
 
-Route::post('/savedrama' , [DramaController::class , 'saveDrama']);
+Route::post('/savedrama'            , [DramaController::class , 'saveDrama']);
+
+Route::get('/trendingdrama'         , [DramaController::class , 'trendingDrama']);
+
+Route::get('admin/deletedrama/{id}' , [DramaController::class,'deleteDrama']);
+
+
 
 
 //*movies operations*
@@ -89,12 +90,14 @@ Route::get('fantasy'   , [MoviesController::class,'fantasy']);
 Route::get('moviedetails/{id}'   , [MoviesController::class,'MovieDetails']);
 
 Route::get('/addmovie',function () {
-    return view('addmovie');
+    return view('Movies/addmovie');
 });
 
-Route::post('/savemovie' , [MoviesController::class , 'saveMovie']);
+Route::post('/savemovie'            , [MoviesController::class , 'saveMovie']);
 
+Route::get('/trendingmovie'         , [MoviesController::class , 'trendingMovie']);
 
+Route::get('admin/deletemovie/{id}' , [MoviesController::class ,'deleteMovie']);
 
 //*users operations*
 

@@ -9,8 +9,8 @@ use App\Models\Post;
 class PostsController extends Controller
 {
     //
-    public static function AddPost(){
-        return view('AddPost');
+    public static function addPost(){
+        return view('Posts/AddPost');
     }
 
     public function showPosts(){
@@ -31,7 +31,13 @@ class PostsController extends Controller
 
     public function postsTable(){
         $posts = Post :: all();
-        return view('showpoststable' , ['posts' => $posts]);
+        return view('Posts/showpoststable' , ['posts' => $posts]);
+    }
+
+    public function deletePost($id){
+
+        Post::destroy($id);
+         return redirect()->back();
     }
 
 }

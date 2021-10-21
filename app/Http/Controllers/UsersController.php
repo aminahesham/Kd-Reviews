@@ -13,7 +13,7 @@ class UsersController extends Controller
 
     public function usersTable(){
         $users=User::all();
-        return view('ShowUsers',compact('users'));
+        return view('Users/ShowUsers',compact('users'));
 
     }
 

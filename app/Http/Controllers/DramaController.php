@@ -18,29 +18,35 @@ class DramaController extends Controller
 
     public function dramaDetails($id){
         $data =Drama :: find($id);
-        return view('dramadetails' , ['dramas' => $data]);
+        return view('Drama/dramadetails' , ['dramas' => $data]);
     }
 
     public function allDramas (){
         $dramas = Drama:: all ();
-        return view ('DramaTypes' , compact('dramas'));
+        return view ('Drama/DramaTypes' , compact('dramas'));
     }
 
     public function full (){
         $dramas = Drama:: where ('status' , 'full' )->get();
-        return view ('DramaTypes' , compact('dramas'));
+        return view ('Drama/DramaTypes' , compact('dramas'));
     }
 
     public function continous (){
         $dramas = Drama:: where ('status' , 'continous' )->get();
-        return view ('DramaTypes' , compact('dramas'));
+        return view ('Drama/DramaTypes' , compact('dramas'));
+    }
+
+    public function trendingDrama(){
+        $dramas = Drama:: where ('trending' , 1)->get();
+        return view('Drama/TrendingDrama' , compact ('dramas'));
+
     }
 
 /* admin shows dramas table */
 
     public function dramasTable(){
         $dramas=Drama::all();
-        return view('ShowDramas',compact('dramas'));
+        return view('Drama/ShowDramas',compact('dramas'));
 
     }
     
@@ -65,5 +71,9 @@ class DramaController extends Controller
         return redirect()->back();
     }
 
-    
+    public function deleteDrama($id){
+
+        Drama::destroy($id);
+         return redirect()->back();
+    }
 }

@@ -37,7 +37,7 @@ class HomeController extends Controller
             return view('MainHome');
         }
         else{
-            return view('dashboard');
+            return view('Dashboard/dashboard');
         }
     }
     
