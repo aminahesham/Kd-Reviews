@@ -45,7 +45,7 @@ img{
 
                     <a href="{{url('addpost')}}" id="icon"> 
                     <h3 style="font-size:20px;">Add New Post :</h3><br>
-                        <img src="https://cdn-icons.flaticon.com/png/512/3131/premium/3131611.png?token=exp=1634844680~hmac=0f29bf6296405d4a952e94a7a951aec5"  alt="Add Post">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1999/1999310.png"  alt="Add Post">
                     </a>
             
                     <a href="{{url('adddrama')}}"id="icon">
@@ -58,11 +58,13 @@ img{
                         <img src="https://cdn-icons-png.flaticon.com/512/1101/1101762.png"  alt="Add Movie">
                     </a>
 
+                    @if(Auth::User()->hasRole('super_admin'))
 
                     <a href="{{url('showusers')}}"id="icon">
                     <h3 style="font-size:20px;">Manage Users :</h3><br>
-                        <img src="https://cdn-icons-png.flaticon.com/512/2534/2534183.png"  alt="Manage Users">
+                        <img src="https://apkmodfree.com/wp-content/uploads/2021/05/1294803_featured.png"  alt="Manage Users">
                     </a>
+                    @endif
                     </div>
                     </div>
                     </div>
