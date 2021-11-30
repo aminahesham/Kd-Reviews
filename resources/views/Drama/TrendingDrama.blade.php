@@ -16,13 +16,13 @@ a:hover {
 }
 div.gallery {
   margin: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   float: left;
   width: 200px;
 }
 
 div.gallery:hover {
-  border: 1px solid #f8615a;
+  border: 2px solid #990099;
 }
 
 div.gallery img {
@@ -46,10 +46,11 @@ h3{
 @foreach($dramas as $item)
 <div class="responsive">
   <div class="gallery">
-    <a target="_blank" href="dramadetails/{{$item['id']}}">
+    <a  href="dramadetails/{{$item['id']}}">
       <img src="{{$item['photo']}}" alt="Cinque Terre" width="200" height="300">
-    </a>
     <div class="desc" >{{$item['name']}}</div>
+    </a>
+
   </div>
 </div>
     @endforeach

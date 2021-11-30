@@ -125,8 +125,8 @@ a:hover {
 
     <td>
 
-    <a href="{{url('admin/getdrama/'.$drama->id)}}" target="_blank" id="btn">Update</a><br><br>
-    <a href="{{url('admin/deletedrama/'.$drama->id)}}" target="_blank" id="btn-red">Delete</a>
+    <a href="{{url('admin/getdrama/'.$drama->id)}}" target="" id="btn">Update</a><br><br>
+    <a href="{{url('admin/deletedrama/'.$drama->id)}}" target="" id="btn-red">Delete</a>
 
 
     <br><br>

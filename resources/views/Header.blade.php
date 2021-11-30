@@ -43,6 +43,8 @@
           <li><a href="{{url('romantic')}}" style="color:#003366;">Romantic </a></li>
           <li><a href="{{url('comedy')}}" style="color:#003366;">Comedy </a></li>
           <li><a href="{{url('fantasy')}}" style="color:#003366;">Fantasy</a></li>
+          <li><a href="{{url('drama')}}" style="color:#003366;">Drama</a></li>
+
 
         </ul>
       </li>

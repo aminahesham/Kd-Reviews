@@ -3,70 +3,78 @@
 <style>
 
 
-img{
-        width:200px;
-        height:200px;
 
-}
-#icon:link, #icon:visited {
-  background-color: white;
-  color: black;
-  padding: 10px 20px;
+div.polaroid {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   float:left;
-  margin-right:50px;
+  padding:10px;
+  margin:20px;
 
 }
 
-#icon:hover, #icon:active {
-  background-color: #f0f5f5;
-  color: black;
-  border: 1px solid #000099;
+div.container {
+  padding: 10px;
 }
-
     
 </style>
 
-<x-app-layout>
 
+
+<x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
-
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" >
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
 
-                    <a href="{{url('addpost')}}" id="icon"> 
-                    <h3 style="font-size:20px;">Add New Post :</h3><br>
-                        <img src="https://cdn-icons-png.flaticon.com/512/1999/1999310.png"  alt="Add Post">
-                    </a>
+                <a href="{{url('addpost')}}" id="icon"> 
+                        <div class="polaroid">
+                      <img src="https://cdn-icons-png.flaticon.com/512/1999/1999310.png"  alt="Add Post" >
+                      <div class="container">
+                      <p>Add New Post :</p>
+                      </div>
+                      </div>
+                   </a>
             
                     <a href="{{url('adddrama')}}"id="icon">
-                    <h3 style="font-size:20px;">Add New Drama :</h3><br>
-                        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991494.png"  alt="Add Drama">
-                    </a>
+                       <div class="polaroid">
+                       <img src="https://cdn-icons-png.flaticon.com/512/2991/2991494.png"  alt="Add Drama" >
+
+                      <div class="container">
+                      <p>Add New Drama :</p>
+                      </div>
+                      </div>
+                   </a>
 
                     <a href="{{url('addmovie')}}"id="icon">
-                    <h3 style="font-size:20px;">Add New Movie :</h3><br>
-                        <img src="https://cdn-icons-png.flaticon.com/512/1101/1101762.png"  alt="Add Movie">
-                    </a>
+                       <div class="polaroid">
+                      <img src="https://cdn-icons-png.flaticon.com/512/1101/1101762.png" alt="Add Movie" >
+                      <div class="container">
+                      <p>Add New Movie :</p>
+                      </div>
+                      </div>
+                   </a>
 
-                    @if(Auth::User()->hasRole('super_admin'))
-
+                   @if(Auth::User()->hasRole('super_admin'))
                     <a href="{{url('showusers')}}"id="icon">
-                    <h3 style="font-size:20px;">Manage Users :</h3><br>
-                        <img src="https://apkmodfree.com/wp-content/uploads/2021/05/1294803_featured.png"  alt="Manage Users">
-                    </a>
+                       <div class="polaroid">
+                      <img src="https://apkmodfree.com/wp-content/uploads/2021/05/1294803_featured.png" alt="manage users" >
+                      <div class="container">
+                      <p>Manage Users :</p>
+                      </div>
+                      </div>
+                   </a>
                     @endif
-                    </div>
-                    </div>
-                    </div>
-                    </div>
+                    
+                    
+            </div>
+        </div>
+    </div>
 </x-app-layout>

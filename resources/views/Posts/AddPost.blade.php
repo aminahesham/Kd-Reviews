@@ -53,13 +53,13 @@ body {
 @csrf
 <div class="form-group">
   
-  <label for="title"  ><b> Report Title :</b></label><br><br>
+  <label for="title"  ><b>Title :</b></label><br><br>
   <input type="text" class="col-sm-2 col-form-label text-danger"   id="input" name="title"  size="50" multiple><br>
 </div>      
 <br>
 
 <div class="form-group">
-  <label for="details" ><b> Report Details :</b></label><br><br>
+  <label for="details" ><b>Details :</b></label><br><br>
   <textarea class="col-sm-2 col-form-label text-danger"  id="input" name="details"  cols="50" rows="10" size="50" multiple></textarea><br>
 </div>      
 <br>

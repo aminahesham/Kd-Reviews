@@ -14,31 +14,39 @@ body{
     padding: 20px;
 }
 
-</style>
-  @foreach($dramas as $item)
-<div class="container">
-<div class="searched-item">
+label{
+  font-size:16px;
+  color:black;
+}
+#header{
+  font-size:14px;
+  color:#ff6600;
+}
 
-      <div class= "float-left">
-      <img class="" style="width:600px;height:400px;" src="{{$item['photo']}}" >
+</style>
+  @foreach($dramas as $drama)
+  <div class= "float-left">
+      <img class="" style="width:300px;height:400px;" src="{{$drama['photo']}}" >
       </div>
+
+
       <div class="float-right">
-      <h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Name :</h3>
-      <h4 style='color:black'>{{$item['name']}}</h4>
-      <h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Rate :</h3>
-      <h4 style='color:black'>{{$item['rate']}}/10</h4>
-      <h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Story :</h3>
-      <h4 style='color:black'>{{$item['story']}}</h4>
-      <h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Cast :</h3>
-      <h4 style='color:black'>{{$item['cast']}}</h4>
-      <h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Status :</h3>
-      <h4 style='color:black'>{{$item['status']}}</h4>
-      <h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Country :</h3>
-      <h4 style='color:black'>{{$item['country']}}</h4>
-      <h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Classification :</h3>
-      <h4 style='color:black'>{{$item['classification']}}+</h4>
-      <h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Year :</h3>
-      <h4 style='color:black'>{{$item['year']}}</h4>
+      <label for="" id="header" > Name :</label>     
+      <label for="name">{{$drama['name']}}</label><br><br>
+      <label for=""id="header"> Rate :</label>
+      <label for="">{{$drama['rate']}}/10</label><br><br>
+      <label for=""id="header">Story :</label>
+       <p style="width:600px;"> {{$drama['story']}}</p><br>
+      <label for=""id="header">Cast :</label> 
+      <label for=""> {{$drama['cast']}}</label><br><br>
+      <label for=""id="header">Status :</label>
+      <label for="">{{$drama['status']}}</label><br><br>
+      <label for=""id="header">Country :</label>
+      <label for="">{{$drama['country']}}</label><br><br>
+      <label for=""id="header">Classification :</label>
+      <label for="">{{$drama['classification']}}+</label><br><br>
+      <label for=""id="header">Year :</label>
+      <label for="">{{$drama['year']}}</label><br><br>
 
 
       

@@ -76,4 +76,25 @@ class DramaController extends Controller
         Drama::destroy($id);
          return redirect()->back();
     }
+
+//get Drama to update 
+    public function getDrama($id){
+
+        $dramas= Drama::find($id);
+        if(!$dramas)
+        return redirect()->back();
+ 
+        $dramas=Drama::select('id','name','photo', 'rate','story' , 'cast' , 'status' , 'country' , 'classification' , 'year' , 'trending')->find($id);
+        return view('Drama/UpdateDrama',compact('dramas'));
+       }
+//save updated Drama
+public function updateDrama(Request $request,$id){
+
+        $dramas =Drama::find($id);
+         if (!$dramas)
+        return redirect()->back();
+      
+        $dramas->update($request->all());
+        return redirect('showdramas'); 
+          }
 }

@@ -50,10 +50,15 @@ class MoviesController extends Controller
         return view ('Movies/MoviesTypes' , compact('movies'));
     }
 
+    public function drama (){
+        $movies = Movies:: where ('type' , 'drama')->get();
+        return view ('Movies/MoviesTypes' , compact('movies'));
+    }
     public function MovieDetails($id){
         $movies =Movies :: find($id);
-        return view('Movies/MovieDetails' , ['movies' => $movies]);
+        return view('Movies/MovieDetails' , ['movies' => $movies] );
     }
+
     public function trendingMovie(){
         $movies=Movies:: where ('trending' , 1)->get();
         return view('Movies/TrendingMovies' , compact('movies'));

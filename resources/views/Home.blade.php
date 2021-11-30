@@ -2,9 +2,9 @@
 use App\Models\Drama;
 use App\Models\Movies;
 use Illuminate\Support\Facades\DB;
-$trendingDramas = Drama:: where ('trending' , 1)->paginate(5);
+$trendingDramas = Drama:: where ('trending' , 1)->paginate(4);
 
-$trendingMovies = Movies:: where ('trending' , 1)->paginate(5);
+$trendingMovies = Movies:: where ('trending' , 1)->paginate(4);
 
 
 ?>
@@ -70,13 +70,13 @@ a:hover{
 }
 div.gallery {
   margin: 5px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   float: left;
   width: 200px;
 }
 
 div.gallery:hover {
-  border: 1px solid #777;
+  border: 2px solid #990099;
 }
 
 div.gallery img {
@@ -85,7 +85,7 @@ div.gallery img {
 }
 
 div.desc {
-  padding: 15px;
+  padding: 20px;
   text-align: center;
 }
 .pagination {
@@ -108,7 +108,36 @@ div.desc {
   color: white;
   border: 1px solid #4CAF50;
 }
-.pagination a:hover:not(.active) {background-color:#e6ccff;}
+.pagination a:hover:not(.active) {
+  background-color:#990099;
+  color:white;
+
+}
+
+aside {
+  padding: 20px;
+  margin-left: 10px;
+  float: right;
+  height: auto;
+  display: block;
+}
+
+#mg{
+  display:block;
+  height:950px;
+  width:455px;
+}
+.hero-text {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
 
 </style>
 
@@ -200,23 +229,33 @@ div.desc {
 
 
 
+<aside>
+<div class="" style="border-style: hidden;">
+<h1 style="font-size:30px;color:white;background-color:black;"> most viewed this month!</h1>
+
+<img src="https://upload.wikimedia.org/wikipedia/en/4/4e/The_Veil_%28South_Korean_TV_series%29.jpg" alt="" id="mg">
+  
+</div>
+
+
+
+</aside>
 
  <!-- Trending Dramas -->
- <div style="margin:10px;" class="container">
-<h3 style="color:darkblue;text-align:center;text-shadow: 2px 2px 4px #000000;">*Trending Dramas*</h3>
+ <div style="margin:20px; float: left; width:60%;" class="container">
+<h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Trending Dramas :</h3>
 @foreach($trendingDramas as $item)
 <div class="responsive">
   <div class="gallery">
-    <a target="_blank" href="dramadetails/{{$item['id']}}">
+    <a  href="dramadetails/{{$item['id']}}">
       <img src="{{$item['photo']}}" alt="Cinque Terre" width="200" height="300">
-    </a>
     <div class="desc">{{$item['name']}}</div>
+    </a>
   </div>
 </div>
     @endforeach
 <div class="pagination">
-  <a href="{{url('/trendingdrama')}}">❯❯</a>
-  <a href="{{url('/trendingdrama')}}"> Next</a>
+  <a href="{{url('/trendingdrama')}}"> Next ...</a>
 </div>
 </div>
 
@@ -224,21 +263,20 @@ div.desc {
 
  <!-- Trending Movies -->
 
-<div style="margin:10px; " class="container">
-<h3 style="color:darkblue;text-align:center;text-shadow: 2px 2px 4px #000000;">*Trending Movies*</h3>
+<div style="margin:20px;  float: left; width:60%;" class="container">
+<h3 style="color:black;text-shadow: 2px 2px 4px #000000;">Trending Movies :</h3>
 @foreach($trendingMovies as $item)
 <div class="responsive">
   <div class="gallery">
-    <a target="_blank" href="moviedetails/{{$item['id']}}">
-      <img src="{{$item['photo']}}" alt="Cinque Terre" width="200" height="300">
-    </a>
+    <a href="moviedetails/{{$item['id']}}">
+      <img src="{{$item['photo']}}" alt="" width="200" height="300">
     <div class="desc">{{$item['name']}}</div>
+    </a>
   </div>
 </div>
     @endforeach
     <div class="pagination">
-  <a href="{{url('/trendingmovie')}}">❯❯</a>
-  <a href="{{url('/trendingmovie')}}"> Next</a>
+  <a href="{{url('/trendingmovie')}}"> Next ...</a>
 </div>
 </div>
 

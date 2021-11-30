@@ -6,11 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateMoviesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    /*
+     
     public function up()
     {
         Schema::create('movies', function (Blueprint $table) {
@@ -18,6 +15,7 @@ class CreateMoviesTable extends Migration
             $table->string('name');
             $table->integer('photo');
             $table->integer('rate');
+            $table->integer('trending');
             $table->string('story');
             $table->string('cast');
             $table->string('country');
@@ -28,13 +26,10 @@ class CreateMoviesTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('movies');
     }
+    */
 }

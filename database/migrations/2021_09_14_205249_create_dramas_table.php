@@ -18,8 +18,13 @@ class CreateDramasTable extends Migration
             $table->string('name');
             $table->integer('photo');
             $table->integer('rate');
+            $table->integer('trending');
             $table->string('story');
             $table->string('cast');
+            $table->string('country');
+            $table->string('year');
+            $table->string('status');
+            $table->string('classification');
             $table->timestamps();
         });
     }

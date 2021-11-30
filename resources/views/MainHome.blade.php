@@ -14,7 +14,7 @@ body {
 }
 
 .hero-image {
-  background-image: url("https://image.winudf.com/v2/image1/Y29tLm5leG9mdC5rb3JlYW5tb3ZpZXN0dnNlcmllc19zY3JlZW5fMF8xNTU1MDUyNzU3XzA5OA/screen-0.jpg?fakeurl=1&type=.jpg");
+  background-image: url("https://i1.wp.com/c-drama.net/wp-content/uploads/2021/09/%D9%85%D8%B3%D9%84%D8%B3%D9%84-%D8%AF%D8%A7%D9%84%D9%8A-%D9%88%D8%A7%D9%84%D8%A7%D9%85%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D9%88%D8%B1-..jpg?fit=1200%2C675&ssl=1");
   background-color: #cccccc;
   height: 600px;
   background-position: center;
@@ -35,7 +35,7 @@ body {
   color: white;
 }
 img{
-  border: 2px solid blue;
+  border: 2px solid #990099;
   border-radius: 15px 50px;
 
 }
@@ -64,12 +64,12 @@ img{
 
 <div class="hero-image" style="border-style: hidden;">
   <div class="hero-text">
-    <h1 style="font-size:50px">Welcome To Kd-Reviews!</h1>
+    <h3 style="">Welcome To Kd-Reviews!</h3>
   </div>
 </div>
 <br>
 
-<h2 style="color:darkblue;text-align: center;text-shadow: 2px 2px 4px #000000;">New Posts !</h2>
+<h2 style="color:black;text-align: center;text-shadow: 2px 2px 4px #000000;">New Posts !</h2>
 
 
 <div class="container" style="margin:10px; border-color: #996666; border-radius: 15px 50px;">
@@ -77,7 +77,7 @@ img{
 <div id='#showposts'>
 <br><br>
 @foreach($posts as $post)
-<h3 style="color:darkblue;text-shadow: 2px 2px 4px #000000;">{{$post['title']}}</h3>
+<h3 style="color:black;text-shadow: 2px 2px 4px #000000;">{{$post['title']}}</h3>
 <img src="{{$post['photo']}}" alt="" id="img" style="width:300px;height:300px;">
 <br><br>
 <p  style="color:black;font-size:18px;border-bottom-style: solid;border-bottom-width: medium;">
@@ -87,10 +87,7 @@ img{
 @endforeach
 </div>
 
-<div class="pagination">
-  <a href="#">❮</a>
-  <a href="#">❯</a>
-</div>
+
 
 </div>
   

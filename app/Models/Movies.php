@@ -23,4 +23,8 @@ class Movies extends Model
         'year',
         'trending',
     ];
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
+      }
 }

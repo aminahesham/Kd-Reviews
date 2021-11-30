@@ -96,16 +96,16 @@ a.button{
     <td>{{$user -> email}}</td>
     <td>
       @foreach($user->roles as $role)
-      {{ $role ->display_name }}
+      {{ $role ->display_name }} /
      @endforeach
     </td>
 
     <td>
 
-<button onclick="window.location.href='{{url('admin/getuser/'.$user->id)}}'" style="color:blue;">Update</button>
+<button onclick="window.location.href='{{url('getuser/'.$user->id)}}'" style="color:blue;">Update</button>
 
 <br><br>
-<button onclick="window.location.href='{{url('admin/deleteuser/'.$user->id)}}'" style="color:#ff4000;">Delete</button>
+<button onclick="window.location.href='{{url('deleteuser/'.$user->id)}}'" style="color:#ff4000;">Delete</button>
 
 
     </td>
