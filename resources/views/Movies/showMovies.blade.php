@@ -139,8 +139,8 @@ a.button{
 
 
     <td>
-    <a href="{{url('admin/getmovie/'.$movie->id)}}" target="_blank" id="btn">Update</a><br><br>
-    <a href="{{url('admin/deletemovie/'.$movie->id)}}" target="_blank" id="btn-red">Delete</a>
+    <a href="{{url('getmovie/'.$movie->id)}}" target="" id="btn">Update</a><br><br>
+    <a href="{{url('admin/deletemovie/'.$movie->id)}}" target="" id="btn-red">Delete</a>
 
 
     </td>

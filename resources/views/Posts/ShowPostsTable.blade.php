@@ -114,7 +114,7 @@ a.button{
   @foreach($posts as $post)
   <tr>
   <th scope="row">{{$post->id}}</th>
-    <td>{{$post -> title}}</td>
+    <td style="width:300px;">{{$post -> title}}</td>
     <td><img class="slider-img" src="{{$post['photo']}}"style="width:200px;height:300px;" ></td>
     <td>{{$post -> source}}</td>
     <td>{{$post -> created_at}}</td>
@@ -124,8 +124,7 @@ a.button{
 
 
     <td>
-    <a href="{{url('admin/getpost/'.$post->id)}}" class="btn btn-warning" id="btn" style="background-color: blue;">show post</a><br>
-    <a href="{{url('admin/getpost/'.$post->id)}}" class="btn btn-warning" id="btn" style="background-color: #79d2a6">Update</a><br>
+    <a href="{{url('getpost/'.$post->id)}}" class="btn btn-warning" id="btn" style="background-color: #79d2a6">Update</a><br>
     <a href="{{url('admin/deletepost/'.$post->id)}}" class="btn btn-warning" id="btn" style="background-color:orange">Delete</a>
 
 

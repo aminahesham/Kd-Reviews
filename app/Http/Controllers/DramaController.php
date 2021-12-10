@@ -70,7 +70,7 @@ class DramaController extends Controller
         ]);
         return redirect()->back();
     }
-
+// admin delete drama from database 
     public function deleteDrama($id){
 
         Drama::destroy($id);
@@ -87,6 +87,7 @@ class DramaController extends Controller
         $dramas=Drama::select('id','name','photo', 'rate','story' , 'cast' , 'status' , 'country' , 'classification' , 'year' , 'trending')->find($id);
         return view('Drama/UpdateDrama',compact('dramas'));
        }
+
 //save updated Drama
 public function updateDrama(Request $request,$id){
 

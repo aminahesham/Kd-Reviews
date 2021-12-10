@@ -8,28 +8,32 @@ use App\Models\Movies;
 
 class MoviesController extends Controller
 {
-    //
-
+    
+// show movies table in dashboard
     public function moviesTable (){
         $movies = Movies::all();
         return view ('Movies/showmovies' , compact('movies'));
     }
 
+// user display all movies    
     public function allMovies (){
         $movies = Movies::all();
         return view ('Movies/MoviesTypes' , compact('movies'));
     }
 
+// user display horrible movies    
     public function horrible (){
         $movies = Movies:: where ('type' , 'horrible')->get();
         return view ('Movies/MoviesTypes' , compact('movies'));
     }
 
+// user display suspense movies    
     public function suspense (){
         $movies = Movies:: where ('type' , 'suspense')->get();
         return view ('Movies/MoviesTypes' , compact('movies'));
     }
 
+// user display action movies    
     public function action (){
         $movies = Movies:: where ('type' , 'action' )->get();
         return view ('Movies/MoviesTypes' , compact('movies'));
@@ -59,6 +63,7 @@ class MoviesController extends Controller
         return view('Movies/MovieDetails' , ['movies' => $movies] );
     }
 
+// user display trending movies    
     public function trendingMovie(){
         $movies=Movies:: where ('trending' , 1)->get();
         return view('Movies/TrendingMovies' , compact('movies'));
@@ -85,12 +90,32 @@ class MoviesController extends Controller
         ]);
         return redirect()->back();
     }
-
+// admin delete movie from database
     public function deleteMovie($id){
 
         Movies::destroy($id);
          return redirect()->back();
     }
+    
+//get Movie to update 
+public function getMovie($id){
 
+    $movies= Movies::find($id);
+    if(!$movies)
+    return redirect()->back();
+
+    $movies=Movies::select('id','name','photo', 'rate','story' , 'cast' , 'type' , 'country' , 'classification' , 'year' , 'trending' , 'classification')->find($id);
+    return view('Movies/UpdateMovie',compact('movies'));
+   }
+
+//save updated Movie
+public function updateMovie(Request $request,$id){
+
+    $movies =Movies::find($id);
+     if (!$movies)
+    return redirect()->back();
+    $movies->update($request->all());
+    return redirect('showmovies'); 
+      }
 
 }

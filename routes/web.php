@@ -12,21 +12,18 @@ use App\Http\Controllers\CommentsController;
 
 
 //*main home with slider show without login */
-Route::get('/'            , [DramaController::class , 'showDramas'])->name('/');
+Route::get('/'             , [DramaController::class , 'showDramas'])->name('/');
 
 
 //*redirect users and admins by roles*
 
-Route::get('/redirect'    , [HomeController::class , 'redirect'])->name('redirect');
+Route::get('/redirect'     , [UsersController::class , 'redirect'])->name('redirect');
 
 
 
 Route::group(['middleware' => 'auth'], function () {
 
-Route::post('/savecomment'       , [CommentsController::class,'saveComment'])->name('savecomment');
-
-Route::get('/deletecomment/{id}' , [CommentsController::class,'deleteComment'])->name('deletecomment');
-
+Route::post('/savecomment' , [CommentsController::class,'saveComment'])->name('savecomment');
 
 Route::get('/search'       , [HomeController::class,'Search'])->name('search');
 
@@ -74,24 +71,31 @@ Route::group(['middleware' => 'role:admin|super_admin'], function () {
         return view('Dashboard/Dashboard');
     })->name('dashboard');
     
-    Route::get('/addpost'              , [PostsController::class , 'addPost'])->name('addpost');
-    Route::post('/savepost'            , [PostsController::class , 'savePost'])->name('savepost');
-    Route::get('poststable'            , [PostsController::class,'postsTable'])->name('poststable');
-    Route::get('admin/deletepost/{id}' , [PostsController::class,'deletePost'])->name('deletepost');
-    Route::get('showdramas'            , [DramaController::class,'dramasTable'])->name('showdramas');
+    Route::get('/addpost'              , [PostsController::class ,'addPost'])->name('addpost');
+    Route::post('/savepost'            , [PostsController::class ,'savePost'])->name('savepost');
+    Route::get('poststable'            , [PostsController::class ,'postsTable'])->name('poststable');
+    Route::get('admin/deletepost/{id}' , [PostsController::class ,'deletePost'])->name('deletepost');
+    Route::get('getpost/{id}'          , [PostsController::class ,'getPost'])->name('getpost');
+    Route::post('updatepost/{id}'      , [PostsController::class ,'updatePost'])->name('updatepost');
+
+    Route::get('showdramas'            , [DramaController::class ,'dramasTable'])->name('showdramas');
     Route::post('/savedrama'           , [DramaController::class , 'saveDrama'])->name('savedrama');
-    Route::get('admin/deletedrama/{id}', [DramaController::class,'deleteDrama'])->name('deletedrama');
-    Route::get('admin/getdrama/{id}'   , [DramaController::class,'getDrama'])->name('admingetdrama');
-    Route::post('updatedrama/{id}'     , [DramaController::class,'updateDrama'])->name('adminupdatedrama');
+    Route::get('admin/deletedrama/{id}', [DramaController::class ,'deleteDrama'])->name('deletedrama');
+    Route::get('admin/getdrama/{id}'   , [DramaController::class ,'getDrama'])->name('admingetdrama');
+    Route::post('updatedrama/{id}'     , [DramaController::class ,'updateDrama'])->name('adminupdatedrama');
     Route::get('/adddrama',function () {
         return view('Drama/AddDrama');
     });
-    Route::get('showmovies'            , [MoviesController::class,'moviesTable'])->name('showmovies');
+    Route::get('showmovies'            , [MoviesController::class ,'moviesTable'])->name('showmovies');
     Route::post('/savemovie'           , [MoviesController::class , 'saveMovie'])->name('savemovie');
     Route::get('admin/deletemovie/{id}', [MoviesController::class ,'deleteMovie'])->name('deletemovie');
+    Route::get('getmovie/{id}'         , [MoviesController::class ,'getMovie'])->name('admingetmovie');
+    Route::post('updatemovie/{id}'     , [MoviesController::class ,'updateMovie'])->name('adminupdatemovie');
     Route::get('/addmovie',function () {
         return view('Movies/addmovie');
     });
+
+
     //*users operations*
     
     Route::get('showusers'       , [UsersController::class,'usersTable'])->name('showusers');

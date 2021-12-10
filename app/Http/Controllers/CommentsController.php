@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
-    //
+    //save comment in database
 
     public function saveComment(Request $request ){
         $user    = Auth :: user();
@@ -29,10 +29,6 @@ class CommentsController extends Controller
 
     }
 
-    public function deleteComment($id){
-        Comment::destroy($id);
-        return redirect()->back();
-
-    }
+   
 
 }

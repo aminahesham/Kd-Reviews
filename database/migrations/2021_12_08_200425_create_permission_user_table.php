@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentsTable extends Migration
+class CreatePermissionUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->string('comment');
-            $table->string('user_name');
+        Schema::create('permission_user', function (Blueprint $table) {
+            $table->integer('permission_id');
             $table->integer('user_id');
-            $table->integer('drama_id');
-            $table->integer('movie_id');
+            $table->string('user_type');
 
-        
-            $table->timestamps();
+
         });
     }
 
@@ -33,6 +29,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('permission_user');
     }
 }
